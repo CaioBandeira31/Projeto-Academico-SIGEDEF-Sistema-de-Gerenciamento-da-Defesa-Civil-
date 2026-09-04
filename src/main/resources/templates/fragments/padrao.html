@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <title></title>
+</head>
+<body>
+    <div class="cabecalho-usuario" th:fragment="cabecalho-usuario">
+        <div class="cx-logo-cabecalho">
+            <img class="img-cabecalho" th:src="@{/imagens/logo_sigedef.png}" alt="">
+        </div>
+        <div class="cx-botoes-cabecalho-usuario">
+            <div class="botao-cabecalho-usuario">
+                <a href="" class="txt-cabecalho-usuario">Inicio</a>
+            </div>
+            <div class="botao-cabecalho-usuario">
+                <a href="" class="txt-cabecalho-usuario">Tempo</a>
+            </div>
+            <div class="botao-cabecalho-usuario">
+                <a href="" class="txt-cabecalho-usuario">SMS</a>
+            </div>
+            <div class="botao-cabecalho-usuario">
+                <a href="" class="txt-cabecalho-usuario">Denuncia</a>
+            </div>
+        </div>
+
+        <div class="botao-cabecalho-usuario" id="botao-login">
+                <a href="" class="txt-cabecalho-usuario">Login</a>
+        </div>
+    </div>
+
+    <div class="cabecalho-agente" th:fragment="cabecalho-agente">
+        <div class="cx-logo-cabecalho">
+            <img th:src="@{/imagens/logo_sigedef.png}" alt="">
+        </div>
+
+        <div class="cx-botoes-cabecalho-agente">
+            <div>
+                <a href="">Alerta</a>
+            </div>
+            <div>
+                <a href="">Denuncias</a>
+            </div>
+        </div>
+
+        <div class="cx-perfil">
+
+        </div>
+    </div>
+    <main>
+
+    </main>
+    <footer class="rodape-padrao" th:fragment="rodape-padrao">
+        <div>
+            <p></p>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+        </div>
+        
+        <div>
+            <img src="" alt="">
+        </div>
+
+        <div>
+
+        </div>
+    </footer>
+</body>
+</html>
