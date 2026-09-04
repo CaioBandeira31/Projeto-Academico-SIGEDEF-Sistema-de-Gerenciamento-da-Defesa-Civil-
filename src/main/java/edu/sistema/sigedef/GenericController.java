@@ -12,4 +12,9 @@ public String desenvolvimento(){
     return "/desenvolvimento/teste.html";
 }
 
+@GetMapping("/faq")
+public String TelaFaq(){
+    return"/desenvolvimento/faq.html";
+} 
+
 }

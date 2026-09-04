@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+    <title>Document</title>
+</head>
+<body>
+    <header th:replace="~{fragments/padrão ::  cabecalho-usuario}">  </header>
+    <main>
+        <h1>Perguntas frequentes(FAQ)</h1>
+        <p>esclareça sua principais duvidas sobre o tratamento de dados, envio de denuncias e o recebimento de alertas emergencias.</p>
+        <h2>onde meu dados estão
+            <p>Os seus dados são armazenados de forma criptografada em nossos servidores de segurança nacional e são acessados exclusivamente por agentes autorizados da Defesa Civil para validação e resposta imediata e emergências.</p>
+        </h2>
+        <h2>posso fazer denuncias anonimas
+            <p>
+                sim. O SIGEDEF permite o envio de denûncias totalmente anonimas de forma a resguardar sua segurança. Nenhuma informação pessoal ou endereço de IP é resgistrado nesses casos, garantindo total privacidade e segurança ao denunciante
+            </p>
+        </h2>
+        <h2>posso realizar login sendo cidadão
+            <p>
+                Não, o login no painel administrativo é restrito a operadores oficias, tecnicos e adiministadores do sistema. Cidadãos podem utilizar todos os serviços publicos (como envio de denuncias e cadastro de alertas) sem necessidade de criar uma conta.
+            </p>
+        </h2>
+        <h2>como recebos alertas no SIGEDEF
+            <p>
+                Os alertas oficiais de emergencia são transmitidas via SMS (cadastrando seu CEP gratuitamente enviando mensagem para o numero 40199), rede de sirenes fisicas localizadas em zonas de alto risco e canais oficiais digitais
+            </p>
+        </h2>
+
+    </main>
+    <footer></footer>
+</body>
+</html>
