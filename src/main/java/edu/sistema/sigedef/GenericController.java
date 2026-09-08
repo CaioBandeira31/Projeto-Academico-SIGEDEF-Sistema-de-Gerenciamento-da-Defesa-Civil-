@@ -13,11 +13,11 @@ public String desenvolvimento(){
 }
 
 
-@GetMapping("/")
+/* @GetMapping("/")
 public String desenvolvimento2(){
 
     return "/desenvolvimento/teste.html";
-}
+} */
 
 
 

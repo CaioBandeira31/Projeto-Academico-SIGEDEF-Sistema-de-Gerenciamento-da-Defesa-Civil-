@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  th:href="@{/css/style.css}">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=mail,call" />
+
+    <title></title>
+</head>
+<body>
+    <footer th:fragment="rodape-padrao">
+        <div id="caixa-inicial-rodape">
+            <div class="caixa-rodape" id="caixa-principal-rodape">
+                <div class="caixa-superior-rodape" id="caixa-principal-superior-rodape">
+                    <div class="caixa-superior-esquerda-rodape" id="caixa-interna-superior-esquerda-rodape">
+                        <ul id="lista-contato-rodape">
+                            <li>
+                                <h2 class="subtitulo-rodape">CONTATO</h2>
+                            </li>
+                            <li class="contato-rodape">
+                                <span class="icone-rodape material-symbols-outlined">mail</span>
+                                <p class="texto-rodape">sigedef@gmail.com</p>
+                            </li>
+                            <li class="contato-rodape">
+                                <span class="icone-rodape material-symbols-outlined">call</span>
+                                <p class="texto-rodape">(15) 3272-8922</p>
+                            </li>
+                            <li class="contato-rodape">
+                                <span class="icone-rodape material-symbols-outlined">mail</span>
+                                <p class="texto-rodape">ouvidoriasigedef@gmail.com</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="caixa-superior-central-rodape" id="caixa-interna-superior-central-rodape">
+                        <img th:src="@{/imagens/logo_sigedef.png}" alt="logo-sigedef" class="logo-sigedef-rodape" height="100" width="100">
+                        <h2 class="subtitulo-rodape" id="nome-empresa-rodape">SIGEDEF</h2>
+                        <p class="texto-rodape">Defesa Civil de Itapetininga</p>
+                    </div>
+                    <div class="caixa-superior-direita-rodape" id="caixa-interna-superior-direita-rodape">
+                        <ul id="lista-faq-rodape">
+                            <li><h2 class="subtitulo-rodape">DÚVIDAS/FAQ</h2></li>
+                            <li><a href="" class="link-rodape">Como fazer uma denúncia anônima?</a></li>
+                            <li><a href="" class="link-rodape">Como se cadastrar no alerta SMS?</a></li>
+                            <li><a href="" class="link-rodape">Perguntas frequentes Defesa Civil</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <hr id="barra-horizontal-rodape">
+                <p id="texto-inferior-rodape" class="texto-rodape">SIGEDEF - Todos os direitos reservados &#169 2026</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

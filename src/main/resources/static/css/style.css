@@ -110,3 +110,97 @@ body{
 .cx-botoes-cabecalho-agente{
   border: solid 1px red;
 }
+
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/*RODAPE PADRAO*/
+
+/* CAIXA PARA O FUNDO DO RODAPE*/
+
+#caixa-inicial-rodape {
+  display: flex;
+  justify-content: center;
+  width: 1920px;
+  height: 400px;
+  /* border: solid 1px red ; */
+  background-color: #0b2d4d;
+}
+
+/* CAIXA COM TODO O CONTEÚDO DO RODAPE */
+#caixa-principal-rodape {
+  width: 1920px;
+  margin: 0px 100px 0px 100px;
+  /* border: solid 1px blue; */
+}
+
+/* CAIXA COM OS ELEMENTOS SUPERIORES DO RODAPE */
+.caixa-superior-rodape {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 0px 50px 0px;
+}
+
+/* RETIRANDO OS PONTOS AO LADO DAS LISTAS*/
+#lista-contato-rodape, #lista-faq-rodape{
+  list-style-type: none;
+}
+
+/* CAIXA COM OS DIREITOS RESERVADOS */
+#texto-inferior-rodape {
+  margin: 20px 0px 0px 0px;
+  text-align: center;
+}
+
+/* ESTILIZANDO O TEXTO */
+
+
+/* ESTILIZANDO O TEXTO DOS SUBTÍTULOS */
+.subtitulo-rodape {
+  color: #ffffff;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 20px 0px;
+}
+
+/* ESTILIZANDO OS TEXTOS E LINKS */
+
+/* ADICIONANDO OS ÍCONES AO LADO DA LISTA DE CONTATOS */
+.contato-rodape {
+  display: flex;
+}
+
+/* MODIFICANDO O ÍCONE */
+.icone-rodape {
+  color: #ffffff;
+  margin: 2px 5px 0px 0px;
+}
+
+/* MODIFICAÇÃO PADRÃO PARA OS TEXTOS DO RODAPE */
+.texto-rodape, .link-rodape {
+  color: #faf7fa;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin: 5px 0px 0px 0px;
+}
+
+/* ESTILIZANDO A LOGO DO RODAPE */
+.logo-sigedef-rodape {
+  justify-self: center;
+  background-color: #faf7fa;
+  border-radius: 20px;
+}
+
+/* ALINHANDO O NOME SIGEDEF */
+#nome-empresa-rodape {
+  text-align: center;
+}
+
+/* EDITANDO OS LINKS DO RODAPE */
+.link-rodape {
+  display:block;
+  text-decoration: underline;
+}
+
+/* ESTILIZANDO A TAG HR DO RODAPE */
+#barra-horizontal-rodape {
+  border: solid 1px #102027;
+}
