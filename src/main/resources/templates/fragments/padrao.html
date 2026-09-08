@@ -8,65 +8,16 @@
 </head>
 <body>
     <div class="cabecalho-usuario" th:fragment="cabecalho-usuario">
-        <div class="cx-logo-cabecalho">
-            <img class="img-cabecalho" th:src="@{/imagens/logo_sigedef.png}" alt="">
-        </div>
+        <a href="">
+         <img class="img-cabecalho" th:src="@{/imagens/Logo_Horizontal_PNG.png}" alt="">
+        </a>
         <div class="cx-botoes-cabecalho-usuario">
-            <div class="botao-cabecalho-usuario">
-                <a href="" class="txt-cabecalho-usuario">Inicio</a>
-            </div>
-            <div class="botao-cabecalho-usuario">
-                <a href="" class="txt-cabecalho-usuario">Tempo</a>
-            </div>
-            <div class="botao-cabecalho-usuario">
-                <a href="" class="txt-cabecalho-usuario">SMS</a>
-            </div>
-            <div class="botao-cabecalho-usuario">
-                <a href="" class="txt-cabecalho-usuario">Denuncia</a>
-            </div>
-        </div>
-
-        <div class="botao-cabecalho-usuario" id="botao-login">
-                <a href="" class="txt-cabecalho-usuario">Login</a>
-        </div>
+            <a href="" class="botao-cabecalho-usuario">Inicio</a>
+            <a href="" class="botao-cabecalho-usuario">Tempo</a>
+            <a href="" class="botao-cabecalho-usuario">SMS</a>
+            <a href="" class="botao-cabecalho-usuario">Denuncia</a>
+            <a href="" class="botao-cabecalho-usuario">Login</a>
+        </div> 
     </div>
-
-    <div class="cabecalho-agente" th:fragment="cabecalho-agente">
-        <div class="cx-logo-cabecalho">
-            <img th:src="@{/imagens/logo_sigedef.png}" alt="">
-        </div>
-
-        <div class="cx-botoes-cabecalho-agente">
-            <div>
-                <a href="">Alerta</a>
-            </div>
-            <div>
-                <a href="">Denuncias</a>
-            </div>
-        </div>
-
-        <div class="cx-perfil">
-
-        </div>
-    </div>
-    <main>
-
-    </main>
-    <footer class="rodape-padrao" th:fragment="rodapes">
-        <div>
-            <p></p>
-            <a href=""></a>
-            <a href=""></a>
-            <a href=""></a>
-        </div>
-        
-        <div>
-            <img src="" alt="">
-        </div>
-
-        <div>
-
-        </div>
-    </footer>
 </body>
 </html>
