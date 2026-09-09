@@ -80,31 +80,7 @@ body{
   border-radius: 10px;
   color: #0b2d4d;
 }
-
-
-/* CABECALHO DO AGENTE */
-
-/*CX CABECALHO DO AGENTE*/
-.cabecalho-agente{
-  border: solid 1px red;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  justify-content: center;
-  width: 1920px;
-  height: 100px;
-}
-
-/*CX LOGO CABECALHO*/
-/* REUTILIZADO A DO CABECALHO DO USUARIO */
-
-/* CX BOTOES DO CABECALHO AGENTE */
-.cx-botoes-cabecalho-agente{
-  border: solid 1px red;
-}
-
-
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
-
 /*RODAPE PADRAO*/
 
 /* CAIXA PARA O FUNDO DO RODAPE*/
@@ -196,9 +172,102 @@ body{
   border: solid 1px #102027;
 }
 
-
-
-
-
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* CABECALHO DO DASHBOARD */
+
+/* CX CABECALHO DO DASHBOARD */
+.cabecalho-dashboard{
+  display: grid;
+  background-color: #0b2d4d;
+  grid-template-columns: 1fr 1fr auto;
+  justify-content: center;
+  width: 1920px;
+  height: 100px;
+  padding: 0px 50px 0px 50px;
+}
+
+/* DIV COM O ICONE MENU E O LOGO */
+.cx-logo-cabecalho-dashboard{
+  /* border: solid 1px red; */
+  display: flex;
+  align-items: center;
+}
+
+/* LOGO CABECALHO AGENTE */
+.img-cabecalho-dashboard{
+  /* border: solid 1px red; */
+  width: 200px;
+  height: 100px;
+  justify-self: start;
+  margin-left: 20px;
+}
+
+/* DIV COM O ICONE E O BOTAO PERFIL */
+.cx-cabecalho-perfil-dashboard{
+  width: auto;
+  height: 100px;
+  display: flex;
+  /* border: solid 1px red; */
+}
+
+
+/* LINHA VERTICAL CABECALHO */
+.linha-cabecalho-dashboard{
+  border: solid 1px #FFFFFF;
+  margin-right: 15px;
+  height: 40px;
+  align-self: center;
+}
+
+/* BOTAO PERFIL */
+.botao-cabecalho-perfil-dashboard{
+  /* border: solid 1px red; */
+  height: 50px;
+  min-width: 120px;
+  max-width: 220px;
+  padding-right: 10px;
+  align-self: center;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  font-weight: bold;
+}
+
+/* ICONE */
+.material-symbols-outlined {
+  /* border: solid 1px red; */
+  color: #FFFFFF;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
+  font-size: 40px;
+}
+
+/* DIV BOTOES DASHBOARD */
+.cx-botoes-dashboard{
+  /* border: solid 1px red; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 50px;
+  padding-left: 500px;
+}
+
+/* BOTOES DASHBOARD */
+.botao-dashboard{
+  width: 120px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: bold;
+}.botao-dashboard:hover{
+  background-color: #f4f7fa;
+  border-radius: 10px;
+  color: #0b2d4d;
+}
 
