@@ -7,11 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    <header th:replace="~{fragments/padrao :: cabecalho-usuario}"></header>
+    <header  th:replace="~{fragments/cabecalho :: cabecalho-usuario}"></header>
     <main>
         
     </main>
-    <footer>
+    <footer th:replace="~{fragments/rodape :: rodape-padrao}">
 
     </footer>
 </body>
