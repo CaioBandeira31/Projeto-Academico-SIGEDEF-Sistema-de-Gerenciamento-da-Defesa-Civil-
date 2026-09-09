@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=mail,call" />
+
+    <title></title>
+</head>
+<body>
+    <header th:replace="~{fragments/padrao :: cabecalho-usuario}"></header>
+    <main>
+        <div class="caixa-inicial">
+            <div class="caixa-principal-alerta">
+                <div class="caixa-superior-titulo">
+                    <h1 id="titulo-superior-alerta">Histórico</h1>
+                    <p id="texto-superior-alerta">Gerencie seus alertas emitidos e crie novos comunicados de emergência para população</p>
+                </div>
+                <div class="caixa-central-card-alerta">
+                    <div class="caixa-titulo-card-alerta">
+                        <h2 class="titulo-card-alerta">Alerta de chuvas fortes e alagamentos</h2>
+                        <p class="texto-da-datahora-da-emissão">emitido há 10 segundos</p>
+                    </div>
+                    <div class="caixa-texto-card">
+                        <p class="descricao-alerta-card"></p>
+                    </div>
+                </div>
+            </div>
+            <a href="https://google.com" target="_blank"><button type="button">NOVO ALERTA</button></a>
+        </div>
+    </main>
+    <footer th:replace="~{fragments/rodape-padrao :: }"></footer>
+</body>
+</html>
