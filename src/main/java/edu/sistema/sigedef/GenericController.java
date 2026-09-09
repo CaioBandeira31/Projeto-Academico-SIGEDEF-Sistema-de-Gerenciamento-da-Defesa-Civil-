@@ -12,14 +12,4 @@ public String desenvolvimento(){
     return "/desenvolvimento/teste.html";
 }
 
-
-/* @GetMapping("/")
-public String desenvolvimento2(){
-
-    return "/desenvolvimento/teste.html";
-} */
-
-
-
-
 }
