@@ -12,4 +12,10 @@ public String desenvolvimento(){
     return "/desenvolvimento/teste.html";
 }
 
+
+@GetMapping("/ea")
+public String envioAlerta(){
+    return "/desenvolvimento/pagina-envio-alertas.html";
+}
+ 
 }
