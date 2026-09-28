@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=account_circle" />
     <title></title>
 </head>
 <body>
@@ -39,7 +40,33 @@
                 <span class="material-symbols-outlined">
                     account_circle
                 </span>
-                <p class="txt-cabecalho">Agente</p>
+                Agente
+            </a>
+        </div>
+    </div>
+
+
+    <div class="cabecalho-dashboard" th:fragment="cabecalho-adm">
+        <div class="cx-logo-cabecalho-dashboard">
+            <!-- <span class="material-symbols-outlined">
+                menu
+            </span> -->
+            <a href="">
+                <img class="img-cabecalho-dashboard" th:src="@{/imagens/Logo_Horizontal_PNG.png}" alt="">
+            </a>
+        </div>
+        <div class="cx-botoes-dashboard">
+            <a href="" class="botao-dashboard">Alertas</a>
+            <a href="" class="botao-dashboard">Denuncias</a>
+            <a href="" class="botao-dashboard">Usuários</a>
+        </div>
+        <div class="cx-cabecalho-perfil-dashboard">
+            <div class="linha-cabecalho-dashboard"></div>
+            <a href="" class="botao-cabecalho-perfil-dashboard">
+                <span class="material-symbols-outlined">
+                    account_circle
+                </span>
+                Admin
             </a>
         </div>
     </div>
