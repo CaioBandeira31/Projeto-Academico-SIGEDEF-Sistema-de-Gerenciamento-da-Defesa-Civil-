@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/pagina-previsao-do-tempo.css}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=account_circle,mail,call,clear_day,location_on" />
+    <link rel="icon" type="image/png" th:href="@{/imagens/logo.png}">
+    <title>Previsao de Tempo</title>
+</head>
+<body>
+    <header th:replace="~{fragments/cabecalho :: cabecalho-adm}"></header>
+    <main>
+        <div class="caixa-principal">
+            <h2 class="titulo-pagina">Previsao do Tempo</h2>
+            <div class="caixa-localizacao">
+                <div class="caixa-icone-cidade">
+                    <span class="material-symbols-outlined" id="icone-localizacao">
+                    location_on
+                    </span>
+                    <p class="txt-localizacao">Itapetininga - SP</p>
+                </div>
+                <a href="" class="botao-pesquisar">Pesquisar</a>
+            </div>
+            <div class="caixa-dados-tempo-pai">
+                <div class="caixa-data">
+                    <p class="txt-data">27/08 (Quinta-Feira) Itapetininga</p>
+                </div>
+                <div class="caixa-dados-tempo-filho">
+                    <div class="caixa-condicao">
+                        <span class="material-symbols-outlined" id="icone-previsao">
+                            clear_day
+                        </span>
+                        <div class="caixa-temperatura">
+                            <p class="txt-temperatura">Max</p>
+                            <p class="txt-temperatura">|</p>
+                            <p class="txt-temperatura">Min</p>
+                        </div>
+                        <p>Ensolarado</p>
+                    </div>
+                    <div class="caixa-chuva-vento">
+                        <div class="chuva">
+                            <p>Chuva</p>
+                            <p>0mm</p>
+                        </div>
+                        <div class="vento">
+                            <p>Vento</p>
+                            <p>NE/N - 80km/h</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer th:replace="~{fragments/rodape :: rodape-padrao}"></footer>
+</body>
+</html>
