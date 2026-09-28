@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/pagina-envio-alertas.css}">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=mail,call" />
 
@@ -25,13 +26,27 @@
                         <p class="texto-da-datahora-da-emissão">emitido há 10 segundos</p>
                     </div>
                     <div class="caixa-texto-card">
-                        <p class="descricao-alerta-card"></p>
+                        <h3 class="descricao-alerta-card">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+                        <p class="regiao-afetada-alerta-card"> Beatae qui consequuntur minima reprehenderit aliquid! Voluptatibus itaque doloremque et assumenda animi. Officiis repellat harum qui aliquam. Optio dolore aspernatur nobis dignissimos.</p>
                     </div>
                 </div>
+
+                <div class="caixa-central-card-alerta">
+                    <div class="caixa-titulo-card-alerta">
+                        <h2 class="titulo-card-alerta">Alerta de chuvas fortes e alagamentos</h2>
+                        <p class="texto-da-datahora-da-emissão">emitido há 10 segundos</p>
+                    </div>
+                    <div class="caixa-texto-card">
+                        <h3 class="descricao-alerta-card">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+                        <p class="regiao-afetada-alerta-card"> Beatae qui consequuntur minima reprehenderit aliquid! Voluptatibus itaque doloremque et assumenda animi. Officiis repellat harum qui aliquam. Optio dolore aspernatur nobis dignissimos.</p>
+                    </div>
+                </div>
+
+                <div id="caixa-botao-criar-alerta"><a href="https://google.com" target="_blank" id="link-botao-criar-alerta"><button type="button" id="botao-criar-alerta">NOVO ALERTA</button></a></div>
             </div>
-            <a href="https://google.com" target="_blank"><button type="button">NOVO ALERTA</button></a>
+            
         </div>
     </main>
-    <footer th:replace="~{fragments/rodape-padrao :: }"></footer>
+    <footer th:replace="~{fragments/rodape :: rodape-padrao}"></footer>
 </body>
 </html>
