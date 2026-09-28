@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a{
+  text-decoration: none;
+}
+
+body{
+  background-color: #f4f7fa;
+  font-family: "Poppins", sans-serif;
+}
+
+/* RESET CSS ACIMA */
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+/* MEXER NA ESTILIZAÇÃO DA POP UP */
+
+#caixa-form-gerar-alerta {
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  /* width: 250px; */
+  /* height: 250px; */
+  border: solid gray 1px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  margin: 50px 0px 0px 0px; 
+}
+
+#form-gerar-alerta {
+  padding: 20px;
+}
+
+#titulo-emissao-alerta {
+  font-size: 16px;
+  text-align: center;
+  color: #102027;
+  margin: 0px 0px 20px 0px;
+}
+
+.label-form-gerar-alerta {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: gray ;
+}
+
+#titulo-alerta, #descricao-alerta {
+  width: 300px;
+  background-color: #f4f7fa;
+  border: solid gray 1px;
+  border-radius: 5px;
+  padding: 7px 0px 7px 2px;
+  margin: 0px 0px 20px 0px; 
+  color: #102027;
+}
+
+#descricao-alerta {
+  min-width: 300px;
+  min-height: 100px;
+  max-width: 300px;
+  max-height: 100px
+}
+
+
+.botao-enviar-alerta {
+  width: 110px;
+  height: 35px;
+  background-color: #0b2d4d;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 12px;
+  /* justify-content: center;
+  align-items: center; */
+  border: none;
+  border-radius: 10px;
+}
+
+.botao-enviar-alerta:hover {
+background-color: #1565c0;
+cursor: pointer;
+transition: 0.1s;
+}
+
+.botao-cancelar-alerta {
+  width: 110px;
+  height: 35px;
+  background-color: #f4f7fa;
+  color: gray;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px ;
+}
+
+.botao-cancelar-alerta:hover {
+
+  background-color: lightgray;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.caixa-botoes {
+  display: flex;
+  justify-content: space-between;
+}
