@@ -3,6 +3,7 @@ package edu.sistema.sigedef;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
+
 @Controller
 public class GenericController {
 
@@ -22,5 +23,11 @@ public String envioAlerta(){
 public String popupAlerta() {
     return "/desenvolvimento/formulario-popup-envio-alertas.html";
 }
+
+@GetMapping("faq")
+public String getMethodName() {
+    return "/desenvolvimento/faq.html";
+}
+
  
 }
