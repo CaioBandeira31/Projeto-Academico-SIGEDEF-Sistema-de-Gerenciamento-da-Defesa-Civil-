@@ -42,10 +42,12 @@ body{
   background-color: #0b2d4d;
   grid-template-columns: 1fr auto ;
   justify-content: center;
-  width: 1920px;
+  min-width: 1900px;
+  max-width: 1920px;
   height: 100px;
   padding-left: 50PX;
   padding-right: 100px;
+  overflow-x: hidden;
 }
 
 /*LOGO CABECALHO */

@@ -10,7 +10,7 @@
     <title>Previsao de Tempo</title>
 </head>
 <body>
-    <header th:replace="~{fragments/cabecalho :: cabecalho-adm}"></header>
+    <header th:replace="~{fragments/cabecalho :: cabecalho-usuario}"></header>
     <main>
         <div class="caixa-principal">
             <h2 class="titulo-pagina">Previsao do Tempo</h2>
@@ -34,24 +34,28 @@
                         </span>
                         <div class="caixa-temperatura">
                             <p class="txt-temperatura">Max</p>
-                            <p class="txt-temperatura">|</p>
+                            <p class="txt-temperatura" id="divisao-temperatura">|</p>
                             <p class="txt-temperatura">Min</p>
-                        </div>
-                        <p>Ensolarado</p>
+                            <p class="txt-situacao">Ensolarado</p>
+                        </div>   
                     </div>
                     <div class="caixa-chuva-vento">
                         <div class="chuva">
-                            <p>Chuva</p>
+                            <p class="txt-vento-chuva">Chuva</p>
                             <p>0mm</p>
                         </div>
                         <div class="vento">
-                            <p>Vento</p>
+                            <p class="txt-vento-chuva">Vento</p>
                             <p>NE/N - 80km/h</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        
+
+        
     </main>
     <footer th:replace="~{fragments/rodape :: rodape-padrao}"></footer>
 </body>
