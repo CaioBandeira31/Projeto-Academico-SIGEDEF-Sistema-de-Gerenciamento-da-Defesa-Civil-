@@ -24,10 +24,12 @@ public String popupAlerta() {
     return "/desenvolvimento/formulario-popup-envio-alertas.html";
 }
 
-@GetMapping("faq")
-public String getMethodName() {
-    return "/desenvolvimento/faq.html";
+@GetMapping("previsao")
+public String previsao() {
+    return "/desenvolvimento/pagina-previsao-do-tempo.html";
 }
+
+
 
  
 }
