@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f4f6fa;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #334155;
+    line-height: 1.6;
+}
+
+/* Área de conteúdo do FAQ */
+.faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+}
+
+/* Título Principal */
+.faq-container h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #0f2b48;
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
+}
+
+/* Subtítulo */
+.faq-container > p.subtitulo {
+    font-size: 0.98rem;
+    color: #64748b;
+    margin-bottom: 36px;
+    max-width: 750px;
+}
+
+/* Topo da Pergunta */
+.faq-pergunta {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-bottom: 1px solid #edf2f7;
+    border-radius: 14px 14px 0 0;
+    padding: 16px 24px;
+    margin-top: 22px;
+    position: relative;
+    box-shadow: 0 2px 6px rgba(15, 43, 72, 0.02);
+}
+
+.faq-pergunta::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 14px;
+    bottom: 14px;
+    width: 4px;
+    background-color: #0f2b48;
+    border-radius: 0 4px 4px 0;
+}
+
+.faq-pergunta h2 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #1a202c;
+    letter-spacing: -0.2px;
+}
+
+/* Resposta */
+.faq-resposta {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-top: none;
+    border-radius: 0 0 14px 14px;
+    padding: 20px 24px 24px;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    color: #475569;
+    box-shadow: 0 4px 12px rgba(15, 43, 72, 0.04);
+}
+
+.faq-pergunta:hover,
+.faq-pergunta:hover + .faq-resposta {
+    border-color: #cbd5e1;
+}
+
+@media (max-width: 600px) {
+    .faq-container {
+        padding: 28px 16px 60px;
+    }
+
+    .faq-container h1 {
+        font-size: 1.75rem;
+    }
+
+    .faq-pergunta, .faq-resposta {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+}

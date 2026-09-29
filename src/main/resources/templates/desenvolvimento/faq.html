@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - SIGEDEF</title>
+    <link rel="stylesheet" th:href="@{/css/faq.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=account_circle,mail,call" />
+</head>
+<body>
+    <header th:replace="~{fragments/cabecalho :: cabecalho-usuario}"></header>
+    <main class="faq-container">
+        <h1>Perguntas Frequentes</h1>
+        <p class="subtitulo">
+            Esclareça suas principais dúvidas sobre o tratamento de dados, envio de denúncias e o recebimento de alertas emergenciais.
+        </p>
+
+        <div class="faq-pergunta">
+            <h2>Onde vão meus dados</h2>
+        </div>
+        <p class="faq-resposta">
+            Os seus dados são armazenados de forma criptografada em nossos servidores de segurança nacional e são acessados exclusivamente por agentes autorizados da Defesa Civil para validação e resposta imediata a emergências.
+        </p>
+
+        <div class="faq-pergunta">
+            <h2>Posso realizar o login sendo o cidadão</h2>
+        </div>
+        <p class="faq-resposta">
+            Não, o login no painel administrativo é restrito a operadores oficiais, técnicos e administradores do sistema. Cidadãos podem utilizar todos os serviços públicos (como envio de denúncias e cadastro de alertas) sem necessidade de criar uma conta.
+        </p>
+
+        <div class="faq-pergunta">
+            <h2>Posso fazer denuncias anônimas</h2>
+        </div>
+        <p class="faq-resposta">
+            Sim. O SIGEDEF permite o envio de denúncias totalmente anônimas de forma a resguardar sua segurança. Nenhuma informação pessoal ou endereço de IP é registrado nesses casos, garantindo total privacidade e segurança ao denunciante.
+        </p>
+
+        <div class="faq-pergunta">
+            <h2>Como recebo alertas do SIGEDEF</h2>
+        </div>
+        <p class="faq-resposta">
+            Os alertas oficiais de emergência são transmitidos via SMS (cadastrando seu CEP gratuitamente enviando mensagem para o número 40199), e sirenes físicas localizadas em zonas de alto risco e canais oficiais digitais.
+        </p>
+    </main>
+
+    <footer th:replace="~{fragments/rodape :: rodape-padrao}"></footer>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <link rel="stylesheet" th:href="@{/css/formulario-envio-alertas.css}">
+</head>
+<body>
+    <div class="form-popup" id="caixa-form-gerar-alerta">
+        <form action="" method="post" id="form-gerar-alerta">
+            <h1 id="titulo-emissao-alerta">Emissão de Alerta Oficial</h1>
+            <label for="titulo-alerta" class="label-form-gerar-alerta">Titulo do alerta</label>
+            <br>
+            <input type="text" maxlength="127" placeholder="Nome do alerta" id="titulo-alerta" required>
+            <br>
+            <label for="descricao-alerta" class="label-form-gerar-alerta">Descrição do alerta</label>
+            <br>
+            <textarea type="text" maxlength="255" placeholder="Descrever o alerta" id="descricao-alerta" required></textarea>
+            <br>
+            <div class="caixa-botoes">
+                <button type="button" class="botao-cancelar-alerta">CANCELAR</button>
+                <button type="submit" class="botao-enviar-alerta">GERAR ALERTA</button>
+            </div>
+        </form>
+        
+    </div>
+</body>
+</html>
