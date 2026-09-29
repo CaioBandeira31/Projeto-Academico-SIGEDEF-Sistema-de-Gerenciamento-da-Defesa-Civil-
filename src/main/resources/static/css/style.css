@@ -79,6 +79,9 @@ body{
   background-color: #f4f7fa;
   border-radius: 10px;
   color: #0b2d4d;
+  cursor: pointer;
+  transition: 0.3s;
+  transform: scale(1.01);
 }
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 /*RODAPE PADRAO*/
@@ -275,6 +278,9 @@ body{
   background-color: #f4f7fa;
   border-radius: 10px;
   color: #0b2d4d;
+  cursor: pointer;
+  transition: 0.3s;
+  transform: scale(1.01);
 }
 
 /* texto cabelcalho */

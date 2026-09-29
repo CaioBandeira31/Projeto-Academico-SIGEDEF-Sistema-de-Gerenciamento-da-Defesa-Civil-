@@ -145,9 +145,9 @@ margin: 0px 0px 10px 0px;
 }
 
 #botao-criar-alerta:hover {
-background-color: #1565c0;
-cursor: pointer;
-transition: 0.3s;
-transform: scale(1.01);
+  background-color: #1565c0;
+  cursor: pointer;
+  transition: 0.3s;
+  transform: scale(1.01);
 }
 

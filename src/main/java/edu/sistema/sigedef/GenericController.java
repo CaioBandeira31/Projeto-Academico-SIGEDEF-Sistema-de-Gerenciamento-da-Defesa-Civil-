@@ -29,7 +29,10 @@ public String previsao() {
     return "/desenvolvimento/pagina-previsao-do-tempo.html";
 }
 
-
+@GetMapping("faq")
+public String getMethodName() {
+    return "/desenvolvimento/faq.html";
+}
 
  
 }
