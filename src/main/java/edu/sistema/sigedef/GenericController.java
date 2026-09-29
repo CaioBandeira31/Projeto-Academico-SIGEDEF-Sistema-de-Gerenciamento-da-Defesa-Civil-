@@ -10,7 +10,7 @@ public class GenericController {
 @GetMapping("/")
 public String desenvolvimento(){
 
-    return "/desenvolvimento/teste.html";
+    return "/desenvolvimento/pagina-previsao-do-tempo.html";
 }
 
 
