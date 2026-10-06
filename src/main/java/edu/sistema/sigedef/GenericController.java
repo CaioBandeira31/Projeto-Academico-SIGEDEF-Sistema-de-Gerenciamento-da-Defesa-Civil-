@@ -7,12 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class GenericController {
 
-@GetMapping("/")
-public String desenvolvimento(){
-
-    return "/desenvolvimento/teste.html";
-}
-
 
 @GetMapping("ea")
 public String envioAlerta(){
@@ -34,5 +28,4 @@ public String getMethodName() {
     return "/desenvolvimento/faq.html";
 }
 
- 
 }

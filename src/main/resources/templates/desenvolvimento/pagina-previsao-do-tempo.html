@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,9 +23,10 @@
                 </div>
                 <a href="" class="botao-pesquisar">Pesquisar</a>
             </div>
-            <div class="caixa-dados-tempo-pai">
+            
+            <div class="caixa-dados-tempo-pai" th:each="dia : ${dias}">
                 <div class="caixa-data">
-                    <p class="txt-data">27/08 (Quinta-Feira) Itapetininga</p>
+                    <p class="txt-data">[[${dia.dia}]]</p>
                 </div>
                 <div class="caixa-dados-tempo-filho">
                     <div class="caixa-condicao">
@@ -33,10 +34,10 @@
                             clear_day
                         </span>
                         <div class="caixa-temperatura">
-                            <p class="txt-temperatura">Max</p>
+                            <p class="txt-temperatura">[[${dia.max}]]</p>
                             <p class="txt-temperatura" id="divisao-temperatura">|</p>
-                            <p class="txt-temperatura">Min</p>
-                            <p class="txt-situacao">Ensolarado</p>
+                            <p class="txt-temperatura">[[${dia.min}]]</p>
+                            <p class="txt-situacao">[[${dia.condicao}]]</p>
                         </div>   
                     </div>
                     <div class="caixa-chuva-vento">
@@ -51,6 +52,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
 
         

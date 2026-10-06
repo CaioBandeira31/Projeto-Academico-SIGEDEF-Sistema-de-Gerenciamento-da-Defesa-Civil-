@@ -1,0 +1,22 @@
+{
+    "previsao":[
+        {
+            "dia": "27/08",
+            "max": 24,
+            "min": 18,
+            "condicao": "Nublado"
+        },
+        {
+            "dia": "28/08",
+            "max": 30,
+            "min": 18,
+            "condicao": "Chuvoso"
+        },
+        {
+            "dia": "29/08",
+            "max": 28,
+            "min": 18,
+            "condicao": "Tempestade"
+        }
+    ]
+}
