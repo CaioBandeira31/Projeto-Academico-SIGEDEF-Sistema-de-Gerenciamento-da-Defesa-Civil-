@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+
+/* REUTILIZANDO A ESTILIZAÇÃO DA PAGINA ANTERIOR */
+
+
+#caixa-principal {
+  width: 600px;
+  height: 500px;
+  border: solid 1px lightgray;
+  /* box-shadow: 0px 0px 2px gray; */
+  border-radius: 10px;
+  justify-self: center;
+  margin: 100px 0px 100px 0px;
+  padding: 50px;
+  background-color: #ffffff;
+}
+
+#caixa-principal:hover {
+  box-shadow: 0px 0px 3px lightgray;
+}
+
+#titulo-cadastro {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 34px;
+  color: #0b2d4d;
+}
+
+.titulo {
+    text-align: center;
+    color: #153663;
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+.linha-titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+}
+
+.linha-titulo span {
+    height: 3px;
+}
+
+.linha-titulo .azul {
+    width: 75px;
+    background-color: #153663;
+}
+
+.linha-titulo .vermelho {
+    width: 40px;
+    background-color: #e30613;
+}
+
+#texto-cadastro {
+  text-align:center;
+  color: #0b2d4d;
+  font-size: 18px;
+  margin: 30px 0px 10px 0px;
+}
+
+
+#botao-form-telefone {
+  height: 65px;
+  width: 500px;
+  background-color: #0b2d4d;
+  border: none;
+  border-radius: 10px;
+  font-size: 24px;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+#botao-form-telefone:hover {
+  cursor: pointer;
+  transition: 0.3s;
+  background-color: #1565c0;
+}
+/* /////////////////////////////////////////////////////////////////////////////// */
+
+
+
+/* ESTILIZANDO OS QUADRADOS */
+
+#timer {
+  color: #e30613;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  justify-self: center;
+}
+
+input {
+  width: 50px;
+  height: 50px;
+  border: solid 1px gray;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 24px;
+}
+
+input:focus {
+  border: solid 2px #1565c0;
+  outline: none;
+}
+
+
+#caixa-sms {
+  width: 300px;
+  margin: 25px 0px;
+  justify-content: space-around;
+  display: flex;
+  justify-self: center;
+}
+
+#botao-reenviar-telefone {
+  height: 65px;
+  width: 500px;
+  background-color: #ffffff;
+  border: solid 1px gray;
+  border-radius: 10px;
+  font-size: 24px;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: gray;
+  margin-bottom: 20px;
+}
+
+#botao-reenviar-telefone:hover {
+  cursor: pointer;
+  background-color:#f57c00;
+  color: #ffffff;
+  transition: 0.3s;
+}

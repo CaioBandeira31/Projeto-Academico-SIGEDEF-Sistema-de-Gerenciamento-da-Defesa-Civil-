@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/pagina-confirmar-numero-telefone.css}">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=mail,call" />
+    
+</head>
+<body>
+    <header th:replace="~{fragments/cabecalho :: cabecalho-usuario}"></header>
+
+    <div id="caixa-principal">
+        <h2 id="titulo-cadastro">cadastro de telefone</h2>
+        <div class="linha-titulo">
+            <span class="azul"></span>
+            <span class="vermelho"></span>
+            <span class="azul"></span>
+        </div>
+        <h2 id="texto-cadastro">Código de confirmação SMS.</h2>
+        <span id="timer"></span>
+        <script th:src="@{/javascript/timer.js}" lang="javaScript"></script>
+        
+        <form th:action="@{/}" th:method="post">
+
+            <div id="caixa-sms">
+                <label for="" class="caixa-digito"><input type="tel" placeholder="&#9679" maxlength="1"></label>
+                <label for="" class="caixa-digito"><input type="tel" placeholder="&#9679" maxlength="1"></label>
+                <label for="" class="caixa-digito"><input type="tel" placeholder="&#9679" maxlength="1"></label>
+                <label for="" class="caixa-digito"><input type="tel" placeholder="&#9679" maxlength="1"></label>
+                <label for="" class="caixa-digito"><input type="tel" placeholder="&#9679" maxlength="1"></label>
+            </div>
+            
+            <button type="submit" id="botao-form-telefone">cadastrar</button>
+
+            <button type="submit" id="botao-reenviar-telefone">Reenviar código</button>
+        </form>
+    </div>
+
+    <footer th:replace="~{fragments/rodape :: rodape-padrao}"></footer>
+</body>
+</html>

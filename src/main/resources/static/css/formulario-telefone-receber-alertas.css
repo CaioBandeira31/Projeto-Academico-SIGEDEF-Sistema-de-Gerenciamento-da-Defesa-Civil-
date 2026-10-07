@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a{
+  text-decoration: none;
+}
+
+body{
+  background-color: #f4f7fa;
+  font-family: "Poppins", sans-serif;
+}
+
+/* RESET CSS ACIMA */
+
+
+/* ///////////////////////////////////////////////////////////////////*/
+
+/* ESTILIZANDO O FORMULARIO PARA RECEBER ALERTAS */
+
+#caixa-principal {
+  width: 600px;
+  height: 500px;
+  border: solid 1px lightgray;
+  /* box-shadow: 0px 0px 2px gray; */
+  border-radius: 10px;
+  justify-self: center;
+  margin: 100px 0px 100px 0px;
+  padding: 50px;
+  background-color: #ffffff;
+}
+
+#caixa-principal:hover {
+  box-shadow: 0px 0px 3px lightgray;
+}
+
+#titulo-cadastro {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 34px;
+  color: #0b2d4d;
+}
+
+.titulo {
+    text-align: center;
+    color: #153663;
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+.linha-titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+}
+
+.linha-titulo span {
+    height: 3px;
+}
+
+.linha-titulo .azul {
+    width: 75px;
+    background-color: #153663;
+}
+
+.linha-titulo .vermelho {
+    width: 40px;
+    background-color: #e30613;
+}
+
+#texto-cadastro {
+  text-align:center;
+  color: #0b2d4d;
+  font-size: 16px;
+  margin: 30px 0px;
+}
+
+#label-telefone {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#input-telefone {
+  height: 50px;
+  width: 500px;
+  border-radius: 10px;
+  border: solid 1px gray;
+  margin: 5px 0px 20px 0px;
+  padding: 0px 0px 0px 10px;
+  font-size: 20px;
+}
+
+#termos {
+  display: flex;
+  margin: 0px 0px 30px 0px;
+}
+
+#aceitar-termos {
+  height: 25px;
+  width: 25px;
+}
+
+#termos-condicoes {
+  align-self: center;
+  margin: 0px 0px 0px 15px;
+}
+
+#link-termos {
+  color: #0b2d4d;
+}
+
+#link-termos:hover {
+  color: #b0b0ca;
+  text-decoration: underline;
+}
+
+#botao-form-telefone {
+  height: 65px;
+  width: 500px;
+  background-color: #0b2d4d;
+  border: none;
+  border-radius: 10px;
+  font-size: 24px;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+#botao-form-telefone:hover {
+  cursor: pointer;
+  transition: 0.3s;
+  background-color: #1565c0;
+}
+
+
+/* 
+#aceitar-termos:after {
+content: "✔";
+color: #1565c0;
+} */
+
+
+
+
+
+
+
+
