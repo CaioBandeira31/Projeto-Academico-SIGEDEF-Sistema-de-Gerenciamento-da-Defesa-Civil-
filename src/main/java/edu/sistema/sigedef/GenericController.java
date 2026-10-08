@@ -2,6 +2,8 @@ package edu.sistema.sigedef;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+            
+
 
 
 @Controller
@@ -30,8 +32,18 @@ public String previsao() {
 }
 
 @GetMapping("faq")
-public String getMethodName() {
+public String faq() {
     return "/desenvolvimento/faq.html";
+}
+
+@GetMapping("tel")
+public String formTelefone() {
+    return "/desenvolvimento/formulario-telefone-receber-alertas.html";
+}
+
+@GetMapping("conftel")
+public String confTelefone() {
+    return "/desenvolvimento/pagina-confirmar-numero-telefone.html";
 }
 
  
