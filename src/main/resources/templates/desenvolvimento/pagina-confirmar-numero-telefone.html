@@ -20,24 +20,34 @@
             <span class="vermelho"></span>
             <span class="azul"></span>
         </div>
-        <h2 id="texto-cadastro">Código de confirmação SMS.</h2>
-        <span id="timer"></span>
-        <script th:src="@{/javascript/timer.js}" lang="javaScript"></script>
-        
-        <form th:action="@{/}" th:method="post">
-
-            <div id="caixa-sms">
-                <label for="" class="caixa-digito"><input type="tel" placeholder="&#9679" maxlength="1"></label>
-                <label for="" class="caixa-digito"><input type="tel" placeholder="&#9679" maxlength="1"></label>
-                <label for="" class="caixa-digito"><input type="tel" placeholder="&#9679" maxlength="1"></label>
-                <label for="" class="caixa-digito"><input type="tel" placeholder="&#9679" maxlength="1"></label>
-                <label for="" class="caixa-digito"><input type="tel" placeholder="&#9679" maxlength="1"></label>
+        <div th:switch="${smsValido}">
+            <div th:case="0">
+                <h2 id="texto-cadastro">Código de confirmação SMS.</h2>
+                <span id="timer"></span>
+                <script th:src="@{/javascript/timer.js}" lang="javaScript"></script>
+                
+                <form th:action="@{/conftel}" th:method="post">
+                    <div id="caixa-sms">
+                        <label for="" class="caixa-digito"><input type="tel" placeholder="&#9679" maxlength="1" th:name="codigo1"></label>
+                        <label for="" class="caixa-digito"><input type="tel" placeholder="&#9679" maxlength="1" th:name="codigo2"></label>
+                        <label for="" class="caixa-digito"><input type="tel" placeholder="&#9679" maxlength="1" th:name="codigo3"></label>
+                        <label for="" class="caixa-digito"><input type="tel" placeholder="&#9679" maxlength="1" th:name="codigo4"></label>
+                        <label for="" class="caixa-digito"><input type="tel" placeholder="&#9679" maxlength="1" th:name="codigo5"></label>
+                    </div>
+                
+                    <button type="submit" id="botao-form-telefone">cadastrar</button>
+                    <button type="submit" id="botao-reenviar-telefone">Reenviar código</button>
+                </form>
             </div>
-            
-            <button type="submit" id="botao-form-telefone">cadastrar</button>
-
-            <button type="submit" id="botao-reenviar-telefone">Reenviar código</button>
-        </form>
+            <div th:case="1">
+                <h2 id="texto-cadastro">Telefone cadastrado com sucesso.</h2>
+                <a th:href="@{/}"><button type="submit" id="botao-form-telefone">voltar</button></a>
+            </div>
+            <div th:case="2">
+                <h2 id="texto-cadastro">Tempo expirado ou SMS inválido.</h2>
+                <a th:href="@{/smstel}"><button type="submit" id="botao-reenviar-telefone">Reenviar código</button></a>
+            </div>
+        </div>
     </div>
 
     <footer th:replace="~{fragments/rodape :: rodape-padrao}"></footer>
