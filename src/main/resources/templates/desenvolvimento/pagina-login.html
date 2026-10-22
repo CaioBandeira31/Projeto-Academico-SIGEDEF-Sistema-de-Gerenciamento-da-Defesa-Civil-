@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SIGEDEF</title>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/pagina-login.css}">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=account_circle,mail,call,lock" />
+
+</head>
+<body>
+
+    <!-- CABEÇALHO PADRÃO DO USUÁRIO[cite: 4] -->
+    <div class="cabecalho-usuario" th:replace="~{fragments/cabecalho :: cabecalho-usuario}"> 
+    </div>
+
+    <!-- ÁREA PRINCIPAL DE LOGIN -->
+    <main class="container-principal-login">
+        <div class="caixa-login">
+            
+            <!-- Logo Vertical do SIGEDEF no formulário[cite: 8] -->
+            <div class="cabecalho-caixa-login">
+                <h2>Acesso Restrito</h2>
+                <p>Insira suas credenciais para acessar o painel</p>
+            </div>
+
+            <!-- Alerta de Erro (Aparece dinamicamente se houver falha) -->
+            <!-- O Thymeleaf ativará essa div caso a URL tenha ?error[cite: 4, 5] -->
+            <div class="alerta-erro" th:if="${param.error}" style="display: block;"> <!-- Style block deixado para visualização estática -->
+                <span class="material-symbols-outlined">error</span>
+                <p>Usuário ou senha incorretos. Tente novamente.</p>
+            </div>
+
+            <!-- Alerta de Logout -->
+            <div class="alerta-sucesso" th:if="${param.logout}" style="display: none;">
+                <span class="material-symbols-outlined">check_circle</span>
+                <p>Você saiu do sistema com segurança.</p>
+            </div>
+
+            <!-- Formulário Spring Security (Requer name="username" e name="password") -->
+            <form th:action="@{/login}" method="POST" class="formulario-login">
+                <div class="grupo-input-login">
+                    <label for="username">Usuário</label>
+                    <div class="cx-input">
+                        <span class="material-symbols-outlined icone-input">account_circle</span>
+                        <input type="text" id="username" name="username" placeholder="Digite seu usuário" required autofocus>
+                    </div>
+                </div>
+
+                <div class="grupo-input-login">
+                    <label for="password">Senha</label>
+                    <div class="cx-input">
+                        <span class="material-symbols-outlined icone-input">lock</span>
+                        <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="botao-entrar-login">Entrar no Sistema</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- RODAPÉ PADRÃO[cite: 5] -->
+    <footer th:replace="~{fragments/rodape :: rodape-padrao}">
+    </footer>
+
+</body>
+</html>
