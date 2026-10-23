@@ -2,6 +2,8 @@ package edu.sistema.sigedef;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
             
 
 
@@ -44,6 +46,13 @@ public String formTelefone() {
 @GetMapping("conftel")
 public String confTelefone() {
     return "/desenvolvimento/pagina-confirmar-numero-telefone.html";
+}
+
+
+@GetMapping("login")
+public String paginaLogin() {
+
+    return "/desenvolvimento/pagina-login.html";
 }
 
  
