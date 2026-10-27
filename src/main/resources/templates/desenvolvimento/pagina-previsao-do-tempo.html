@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{/css/style.css}">
     <link rel="stylesheet" th:href="@{/css/pagina-previsao-do-tempo.css}">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=account_circle,mail,call,clear_day,location_on" />
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=account_circle,mail,call,clear_day,location_on,partly_cloudy_day,cloud,rainy,thunderstorm,foggy,ac_unit,weather_snowy,question_mark" />
     <link rel="icon" type="image/png" th:href="@{/imagens/logo.png}">
     <title>Previsao de Tempo</title>
 </head>
@@ -21,7 +22,7 @@
                     </span>
                     <p class="txt-localizacao">Itapetininga - SP</p>
                 </div>
-                <a href="" class="botao-pesquisar">Pesquisar</a>
+                <!-- <a href="" class="botao-pesquisar">Pesquisar</a> -->
             </div>
             
             <div class="caixa-dados-tempo-pai" th:each="dia : ${dias}">
@@ -30,24 +31,19 @@
                 </div>
                 <div class="caixa-dados-tempo-filho">
                     <div class="caixa-condicao">
-                        <span class="material-symbols-outlined" id="icone-previsao">
+                        <span class="material-symbols-outlined" id="icone-previsao" th:text="${dia.icone}">
                             clear_day
                         </span>
                         <div class="caixa-temperatura">
-                            <p class="txt-temperatura">[[${dia.max}]]</p>
-                            <p class="txt-temperatura" id="divisao-temperatura">|</p>
-                            <p class="txt-temperatura">[[${dia.min}]]</p>
-                            <p class="txt-situacao">[[${dia.condicao}]]</p>
+                            <p class="txt-temperatura">Max [[${dia.max}]]°</p>
+                            <!-- <p class="txt-temperatura" id="divisao-temperatura">|</p> -->
+                            <p class="txt-temperatura">Min [[${dia.min}]]°</p>
                         </div>   
                     </div>
-                    <div class="caixa-chuva-vento">
+                    <div class="caixa-chuva-pai">
                         <div class="chuva">
-                            <p class="txt-vento-chuva">Chuva</p>
-                            <p>0mm</p>
-                        </div>
-                        <div class="vento">
-                            <p class="txt-vento-chuva">Vento</p>
-                            <p>NE/N - 80km/h</p>
+                            <p class="txt-chuva">Condição</p>
+                            <p class="txt-situacao">[[${dia.condicao}]]</p>
                         </div>
                     </div>
                 </div>

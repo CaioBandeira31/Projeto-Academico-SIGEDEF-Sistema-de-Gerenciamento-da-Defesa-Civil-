@@ -27,14 +27,20 @@ a{
 body{
   background-color: #f4f7fa;
   font-family: "Poppins", sans-serif;
+
+  /* ISSO EVITE A BARRA INFERIO */
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
+
 
 /* RESET CSS ACIMA */
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
-/* CABEÇALHO USUARIO */
 
+/* CABEÇALHO USUARIO */
 /* CX CABECALHO USUARIO */
 .cabecalho-usuario{
   /* border: solid 1px red; */
@@ -114,6 +120,7 @@ body{
 /* RETIRANDO OS PONTOS AO LADO DAS LISTAS*/
 #lista-contato-rodape, #lista-faq-rodape{
   list-style-type: none;
+  /* border: solid 1px red; */
 }
 
 /* CAIXA COM OS DIREITOS RESERVADOS */

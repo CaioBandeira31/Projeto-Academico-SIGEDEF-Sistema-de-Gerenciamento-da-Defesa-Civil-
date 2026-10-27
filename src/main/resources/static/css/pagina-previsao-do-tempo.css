@@ -27,9 +27,7 @@ a{
 body{
   background-color: #f4f7fa;
   font-family: "Poppins", sans-serif;
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
+  
 }
 /* RESET CSS ACIMA */
 
@@ -169,11 +167,12 @@ main{
 }
 
 /* caixa só da chuva e vento  */
-.caixa-chuva-vento{
+.caixa-chuva-pai{
     /* border: solid 1px green; */
     display: flex;
-    width: 240px;
-    justify-content: space-between;
+    width: 300px;
+    /* border: solid 1px red; */
+    justify-content: center;
 }
 
 /* icone da previsao */
@@ -208,15 +207,14 @@ main{
 }
 /* situacao embaixo da temperatura */
 .txt-situacao{
+    font-weight: 300;
     /* border: solid 1px red; */
-    height: 25px;
-    /* font-weight: bold; */
 }
 
 /* caixa chuva */
 .chuva{
     /* border: solid 1px red; */
-    width: 80px;
+    width: 200px;
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
@@ -235,9 +233,12 @@ main{
     align-items: center;
 }
 
-/* escritva vento e chuva */
-.txt-vento-chuva{
+/* escritva chuva */
+.txt-chuva{
     font-weight: bold;
+    /* border: solid 1px green; */
+    width: 100%;
     font-size: 20px;
     margin-bottom: -50px;
+    padding-bottom: 10px;
 }

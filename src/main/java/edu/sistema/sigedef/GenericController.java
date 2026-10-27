@@ -2,6 +2,8 @@ package edu.sistema.sigedef;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 @Controller
@@ -27,5 +29,11 @@ public String previsao() {
 public String getMethodName() {
     return "/desenvolvimento/faq.html";
 }
+
+@GetMapping("/dashboard")
+public String testeDash(){
+    return "desenvolvimento/pagina-dashboard.html";
+}
+
 
 }
