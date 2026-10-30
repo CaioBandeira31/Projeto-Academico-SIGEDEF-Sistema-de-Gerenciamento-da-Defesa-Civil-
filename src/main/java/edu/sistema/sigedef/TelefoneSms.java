@@ -7,8 +7,9 @@ public class TelefoneSms {
   
   private int id_telefone;
   private String num_telefone;
+  private String codigo;
 
-  public TelefoneSms( String num_telefone) {
+  public TelefoneSms(  String num_telefone) {
     this.num_telefone = num_telefone;
   }
 
@@ -30,16 +31,26 @@ public class TelefoneSms {
     this.num_telefone = num_telefone;
   }
 
-  public int[] gerarCodigo() {
+  public String getCodigo() {
+    return codigo;
+  }
+
+  public void setCodigo(String codigo) {
+    this.codigo = codigo;
+  }
+
+  public String gerarCodigo() {
     Random rand = new Random();
     int num_sms;
-    int[] sms = new int[5];
+    String valor_sms="";
 
-    for (int i = 0; i < sms.length; i++) {
+    for (int i = 0; i < 5; i++) {
       num_sms = rand.nextInt(9);
-      sms[i] = num_sms;
-    } 
-
-    return sms;
+      valor_sms += Integer.toString(num_sms);
+    }
+    
+    setCodigo(valor_sms);
+    
+    return valor_sms;
   }
 }

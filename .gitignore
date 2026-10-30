@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+
+### IGNORANDO CREDENCIAIS DO SMSBARATO ###
+.env

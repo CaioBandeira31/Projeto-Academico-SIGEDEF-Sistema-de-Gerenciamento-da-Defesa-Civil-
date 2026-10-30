@@ -1,6 +1,7 @@
 package edu.sistema.sigedef;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,9 +15,15 @@ public class TelefoneSmsController {
   @Autowired 
   private TelefoneRepository telefoneRepository;
 
-  int[] valorSms = new int[5];
+  String valorSms;
   TelefoneSms telefone_cidadao = new TelefoneSms();
   int smsValido;
+
+  private final SmsSender smsSender;
+
+  public TelefoneSmsController(@Qualifier("smsbarato") SmsSender smsSender){
+    this.smsSender = smsSender;
+  }
 
 
   @GetMapping("tel")
@@ -42,11 +49,9 @@ public String formTelefone(@RequestParam String num_telefone, Model container) {
 
 @GetMapping("smstel")
 public String confTelefone(Model container) {
-  TelefoneSms sms = new TelefoneSms();
-  valorSms = sms.gerarCodigo();
-  for (int i = 0; i < valorSms.length; i++) {
-    System.out.println(valorSms[i]);
-  }
+  valorSms = telefone_cidadao.gerarCodigo();
+  System.out.println(valorSms);
+  smsSender.envioSms(telefone_cidadao);
   smsValido = 0;
   container.addAttribute("smsValido", smsValido);
     return "/desenvolvimento/pagina-confirmar-numero-telefone.html";
@@ -54,14 +59,11 @@ public String confTelefone(Model container) {
 
 @PostMapping("conftel")
 public String postMethodName(@RequestParam String codigo1, @RequestParam String codigo2, @RequestParam String codigo3, @RequestParam String codigo4, @RequestParam String codigo5, Model container) {
-  int[] codigo = new int[5];
-  codigo[0] = Integer.parseInt(codigo1);
-  codigo[1] = Integer.parseInt(codigo2);
-  codigo[2] = Integer.parseInt(codigo3);
-  codigo[3] = Integer.parseInt(codigo4);
-  codigo[4] = Integer.parseInt(codigo5);
   
-  if ((codigo[0] == valorSms[0]) && (codigo[1] == valorSms[1]) && (codigo[2] == valorSms[2]) && (codigo[3] == valorSms[3]) && (codigo[4] == valorSms[4])) {
+  String codigo = codigo1 + codigo2 + codigo3 + codigo4 + codigo5;
+  System.out.println(codigo);
+  
+  if (codigo.equals(valorSms)) {
     telefoneRepository.salvar(telefone_cidadao);
     smsValido = 1;
     container.addAttribute("smsValido", smsValido);
@@ -74,6 +76,12 @@ public String postMethodName(@RequestParam String codigo1, @RequestParam String 
     return "/desenvolvimento/pagina-confirmar-numero-telefone.html";
   }
  
+}
+
+// Rota aaixo usada somente para teste, se for preciso altera-la ou apaga-la, ficar a vontade
+@GetMapping("popup")
+public String popUp() {
+    return "/desenvolvimento/teste-pop-up.html";
 }
 
 }

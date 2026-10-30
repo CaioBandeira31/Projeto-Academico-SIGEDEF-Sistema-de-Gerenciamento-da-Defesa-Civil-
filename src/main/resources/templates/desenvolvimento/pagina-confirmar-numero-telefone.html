@@ -36,8 +36,9 @@
                     </div>
                 
                     <button type="submit" id="botao-form-telefone">cadastrar</button>
-                    <button type="submit" id="botao-reenviar-telefone">Reenviar código</button>
+                    
                 </form>
+                <a th:href="@{/smstel}"><button type="submit" id="botao-reenviar-telefone">Reenviar código</button></a>
             </div>
             <div th:case="1">
                 <h2 id="texto-cadastro">Telefone cadastrado com sucesso.</h2>
