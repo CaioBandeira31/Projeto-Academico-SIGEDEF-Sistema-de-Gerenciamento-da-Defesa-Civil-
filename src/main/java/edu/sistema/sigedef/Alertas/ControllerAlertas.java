@@ -40,7 +40,7 @@ public class ControllerAlertas {
 
         model.addAttribute("paginaAtual", "alertas");
 
-        return "agente/pagina-envio-alertas.html";
+        return "/agente/pagina-envio-alertas.html";
     }
 
     // ENVIANDO PARA OS TELEFONE CADASTRADOS E SALVANDO OS ALERTAS NO HISTORICO
