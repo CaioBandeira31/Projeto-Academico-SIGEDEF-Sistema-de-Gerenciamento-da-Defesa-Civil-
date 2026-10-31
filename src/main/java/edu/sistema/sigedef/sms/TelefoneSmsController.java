@@ -29,8 +29,10 @@ public class TelefoneSmsController {
   @GetMapping("tel")
 public String telefone(Model container) {
   container.addAttribute("telCadastrado", false);
+    
+    container.addAttribute("paginaAtual", "tel");
 
-    return "/desenvolvimento/formulario-telefone-receber-alertas.html";
+    return "default/formulario-telefone-receber-alertas.html";
 }
 
 @PostMapping("formtel")
@@ -54,7 +56,7 @@ public String confTelefone(Model container) {
   smsSender.envioSms(telefone_cidadao);
   smsValido = 0;
   container.addAttribute("smsValido", smsValido);
-    return "/desenvolvimento/pagina-confirmar-numero-telefone.html";
+    return "default/pagina-confirmar-numero-telefone.html";
 }
 
 @PostMapping("conftel")
@@ -68,20 +70,13 @@ public String postMethodName(@RequestParam String codigo1, @RequestParam String 
     smsValido = 1;
     container.addAttribute("smsValido", smsValido);
     
-    return "/desenvolvimento/pagina-confirmar-numero-telefone.html";
+    return "default/pagina-confirmar-numero-telefone.html";
   
   } else {
     smsValido = 2;
     container.addAttribute("smsValido", smsValido);
-    return "/desenvolvimento/pagina-confirmar-numero-telefone.html";
+    return "default/pagina-confirmar-numero-telefone.html";
   }
  
 }
-
-// Rota aaixo usada somente para teste, se for preciso altera-la ou apaga-la, ficar a vontade
-@GetMapping("popup")
-public String popUp() {
-    return "/desenvolvimento/teste-pop-up.html";
-}
-
 }
