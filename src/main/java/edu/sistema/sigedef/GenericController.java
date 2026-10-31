@@ -46,5 +46,12 @@ public String login() {
     return "//desenvolvimento/Login.html";
 }
 
+
+@GetMapping("login")
+public String paginaLogin() {
+
+    return "/desenvolvimento/pagina-login.html";
+}
+
  
 }
