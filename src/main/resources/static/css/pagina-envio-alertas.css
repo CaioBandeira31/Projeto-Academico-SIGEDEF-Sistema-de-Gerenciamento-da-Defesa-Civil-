@@ -52,10 +52,15 @@ body{
 .caixa-principal-alerta {
   justify-self: center;
   /* border: solid 1px blue; */
+  width: 1530px;
+  padding-top: 5px;
 }
 
 .caixa-superior-titulo {
-  margin: 0px 0px 50px 0px;
+  margin-bottom: 5px;
+  border: solid lightgrey 2px;
+  padding: 5px;
+
 }
 
 #titulo-superior-alerta {
@@ -70,7 +75,15 @@ body{
 }
 
 
-
+/* caixa com as caixas de alertas */
+.cx-com-alertas{
+  border: solid lightgrey 1px;
+  min-height: 200px;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 /* ESTILIZANDO AS CAIXAS COM OS ALERTAS */
 
 .caixa-central-card-alerta {
@@ -78,15 +91,15 @@ body{
   border: solid lightgrey 1px;
   border-radius: 15px;
   box-shadow: 0px 1px 5px lightgray;
-  margin: 40px 0px 20px 0px; 
+  margin: 5px 0px 5px 0px; 
 }
 
 .caixa-titulo-card-alerta {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   border-bottom: solid lightgrey 1px;
   background-color: #f4f7fa;
   padding: 15px 20px 15px 20px;
@@ -102,16 +115,17 @@ body{
 }
 
 .caixa-texto-card {
+  /* border: solid 1px green; */
   background-color: #ffffff;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   padding: 40px 20px 40px 20px;
 }
 
 .descricao-alerta-card {
-font-weight: normal;
-font-size: 24px;
-margin: 0px 0px 10px 0px;
+  font-weight: normal;
+  font-size: 24px;
+  margin-bottom: 15px;
 }
 
 .regiao-afetada-alerta-card {
@@ -122,7 +136,11 @@ margin: 0px 0px 10px 0px;
 #caixa-botao-criar-alerta {
   display: flex;
   /* justify-content: center; */
-  margin: 0px 0px 20px 0px;
+  /* margin: 0px 0px 20px 0px; */
+  /* border: solid 1px red; */
+  justify-content: space-between;
+  /* padding-right: 15px; */
+  padding-bottom: 15px;
 
 }
 

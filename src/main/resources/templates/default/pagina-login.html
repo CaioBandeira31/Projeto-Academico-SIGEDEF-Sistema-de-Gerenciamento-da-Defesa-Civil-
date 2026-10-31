@@ -4,31 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - SIGEDEF</title>
-
+    
+    <!-- CSS Base Padrão -->
     <link rel="stylesheet" th:href="@{/css/style.css}">
+
+    <!-- CSS Específico do Login -->
     <link rel="stylesheet" th:href="@{/css/pagina-login.css}">
-
+    
+    <!-- Fontes e Ícones -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=account_circle,mail,call,lock" />
-
 </head>
 <body>
 
-    <!-- CABEÇALHO PADRÃO DO USUÁRIO[cite: 4] -->
-    <div class="cabecalho-usuario" th:replace="~{fragments/cabecalho :: cabecalho-usuario}"> 
-    </div>
+    <header th:replace="~{fragments/cabecalho :: cabecalho-usuario}"></header>
 
     <!-- ÁREA PRINCIPAL DE LOGIN -->
     <main class="container-principal-login">
         <div class="caixa-login">
             
-            <!-- Logo Vertical do SIGEDEF no formulário[cite: 8] -->
+            <!-- Logo Vertical do SIGEDEF no formulário -->
             <div class="cabecalho-caixa-login">
                 <h2>Acesso Restrito</h2>
                 <p>Insira suas credenciais para acessar o painel</p>
             </div>
 
             <!-- Alerta de Erro (Aparece dinamicamente se houver falha) -->
-            <!-- O Thymeleaf ativará essa div caso a URL tenha ?error[cite: 4, 5] -->
+            <!-- O Thymeleaf ativará essa div caso a URL tenha erro -->
             <div class="alerta-erro" th:if="${param.error}" style="display: block;"> <!-- Style block deixado para visualização estática -->
                 <span class="material-symbols-outlined">error</span>
                 <p>Usuário ou senha incorretos. Tente novamente.</p>
@@ -40,7 +41,7 @@
                 <p>Você saiu do sistema com segurança.</p>
             </div>
 
-            <!-- Formulário Spring Security (Requer name="username" e name="password") -->
+            <!-- Formulário login -->
             <form th:action="@{/login}" method="POST" class="formulario-login">
                 <div class="grupo-input-login">
                     <label for="username">Usuário</label>
@@ -63,9 +64,7 @@
         </div>
     </main>
 
-    <!-- RODAPÉ PADRÃO[cite: 5] -->
-    <footer th:replace="~{fragments/rodape :: rodape-padrao}">
-    </footer>
+    <footer th:replace="~{fragments/rodape :: rodape-padrao}"></footer>
 
 </body>
 </html>

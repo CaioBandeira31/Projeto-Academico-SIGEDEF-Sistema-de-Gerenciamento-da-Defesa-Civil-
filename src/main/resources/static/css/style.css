@@ -27,14 +27,44 @@ a{
 body{
   background-color: #f4f7fa;
   font-family: "Poppins", sans-serif;
+  /* ISSO EVITE A BARRA INFERIO */
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+main{
+  min-height: 700px;
+}
+
+/* Largura da barra */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Fundo por onde a barra desliza */
+::-webkit-scrollbar-track {
+    background-color: #f4f7fa;
+}
+
+/* Parte móvel da barra */
+::-webkit-scrollbar-thumb {
+    background-color: lightslategray;
+    border-radius: 10px;
+    border: 1px solid #eaf2f9;
+}
+
+/* Quando o mouse passa sobre a barra */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #111e38;
 }
 
 /* RESET CSS ACIMA */
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
-/* CABEÇALHO USUARIO */
 
+/* CABEÇALHO USUARIO */
 /* CX CABECALHO USUARIO */
 .cabecalho-usuario{
   /* border: solid 1px red; */
@@ -80,8 +110,12 @@ body{
   border-radius: 10px;
   color: #0b2d4d;
   cursor: pointer;
-  transition: 0.3s;
   transform: scale(1.01);
+}.ativo{
+  border-radius: 10px;
+  border-bottom: solid 2px #f4f7fa;
+  border-top: solid 2px #f4f7fa;
+
 }
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 /*RODAPE PADRAO*/
@@ -114,6 +148,7 @@ body{
 /* RETIRANDO OS PONTOS AO LADO DAS LISTAS*/
 #lista-contato-rodape, #lista-faq-rodape{
   list-style-type: none;
+  /* border: solid 1px red; */
 }
 
 /* CAIXA COM OS DIREITOS RESERVADOS */
@@ -239,7 +274,7 @@ body{
   color: #ffffff;
 }.botao-cabecalho-perfil-dashboard:hover{
   border: solid 2px #f4f7fa;
-   border-radius: 10px;
+  border-radius: 10px;
 }
 
 /* ICONE */
@@ -279,7 +314,7 @@ body{
   border-radius: 10px;
   color: #0b2d4d;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.1s;
   transform: scale(1.01);
 }
 
