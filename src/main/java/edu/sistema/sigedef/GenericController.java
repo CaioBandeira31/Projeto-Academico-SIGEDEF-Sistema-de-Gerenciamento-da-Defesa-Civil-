@@ -4,6 +4,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+
+
             
 
 
@@ -38,14 +40,10 @@ public String faq() {
     return "/desenvolvimento/faq.html";
 }
 
-@GetMapping("tel")
-public String formTelefone() {
-    return "/desenvolvimento/formulario-telefone-receber-alertas.html";
-}
 
-@GetMapping("conftel")
-public String confTelefone() {
-    return "/desenvolvimento/pagina-confirmar-numero-telefone.html";
+@GetMapping("login")
+public String login() {
+    return "//desenvolvimento/Login.html";
 }
 
 

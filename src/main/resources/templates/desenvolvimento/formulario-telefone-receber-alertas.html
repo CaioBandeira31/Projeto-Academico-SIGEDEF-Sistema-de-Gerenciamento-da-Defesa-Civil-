@@ -20,17 +20,25 @@
             <span class="vermelho"></span>
             <span class="azul"></span>
         </div>
-        <p id="texto-cadastro">Inscreva seu número para receber alertas preventivos de desastres naturais na sua região via SMS.</p>
-        <form th:action="@{/}" th:method="post">
-            <label for="input-telefone" id="label-telefone">Número de Telefone</label>
-            <br>
-            <input type="tel" placeholder="(15) 12345-6789" id="input-telefone">
-            <div id="termos">
-                <input type="checkbox" id="aceitar-termos">
-                <label for="" id="termos-condicoes">Aceito os <a href="www.google.com" target="_blank" id="link-termos">Termos e Condições</a> para o envio de alertas.</label>
-            </div>
-            <button type="submit" id="botao-form-telefone">cadastrar</button>
-        </form>
+        <div th:if="${!telCadastrado}">
+            <p id="texto-cadastro">Inscreva seu número para receber alertas preventivos de desastres naturais na sua região via SMS.</p>
+            <form th:action="@{/formtel}" th:method="post">
+                <label for="input-telefone" id="label-telefone">Número de Telefone</label>
+                <br>
+                <input type="tel" placeholder="(15) 12345-6789" id="input-telefone" th:name="num_telefone">
+                <div id="termos">
+                    <input type="checkbox" id="aceitar-termos">
+                    <label for="" id="termos-condicoes">Aceito os <a href="www.google.com" target="_blank" id="link-termos">Termos e Condições</a> para o envio de alertas.</label>
+                </div>
+                <button type="submit" id="botao-form-telefone">cadastrar</button>
+            </form>
+        </div>
+
+        <div th:if="${telCadastrado}">
+            <p id="texto-cadastrado">Seu telefone ja está cadastrado!</p>
+            <a th:href="@{/}"><button type="submit" id="botao-form-telefone">voltar</button></a>
+        </div>
+
     </div>
 
     <footer th:replace="~{fragments/rodape :: rodape-padrao}"></footer>

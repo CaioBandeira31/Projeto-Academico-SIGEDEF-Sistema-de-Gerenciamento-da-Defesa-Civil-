@@ -1,0 +1,138 @@
+/* Container que centraliza a caixa de login entre o cabeçalho e o rodapé */
+.container-principal-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 500px); /* Subtrai a altura aproximada do cabeçalho(100px) e rodapé(400px) */
+    padding: 60px 20px;
+}
+
+/* Caixa principal do formulário */
+.caixa-login {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 450px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(11, 45, 77, 0.08);
+    padding: 40px 40px;
+    border-top: 5px solid #ff8800; /* Cor laranja baseada na logo do SIGEDEF */
+}
+
+/* Textos e logo do topo da caixa */
+.cabecalho-caixa-login {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo-login {
+    width: 120px;
+    margin: 0 auto 15px auto;
+}
+
+.cabecalho-caixa-login h2 {
+    color: #0b2d4d; /* Cor azul puxada do seu cabecalho[cite: 6] */
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.cabecalho-caixa-login p {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+/* Estilos de Alertas (Erro e Sucesso) */
+.alerta-erro, .alerta-sucesso {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.alerta-erro {
+    background-color: #fef2f2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+}
+
+.alerta-sucesso {
+    background-color: #f0fdf4;
+    color: #15803d;
+    border: 1px solid #bbf7d0;
+}
+
+.alerta-erro .material-symbols-outlined,
+.alerta-sucesso .material-symbols-outlined {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+/* Estilização do Formulário */
+.formulario-login {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.grupo-input-login label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 8px;
+}
+
+.cx-input {
+    display: flex;
+    align-items: center;
+    background-color: #f4f7fa; /* Mesma cor do seu body original[cite: 6] */
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 0 12px;
+    transition: 0.3s;
+}
+
+.cx-input:focus-within {
+    border-color: #0b2d4d;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(11, 45, 77, 0.1);
+}
+
+.icone-input {
+    color: #94a3b8;
+    font-size: 20px;
+    margin-right: 8px;
+}
+
+.cx-input input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    padding: 12px 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.95rem;
+    color: #1e293b;
+    outline: none;
+}
+
+/* Botão de Entrar */
+.botao-entrar-login {
+    background-color: #0b2d4d; /* Azul do cabeçalho padrão[cite: 6] */
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.botao-entrar-login:hover {
+    background-color: #ff8800; /* Destaque laranja no hover baseado na logo[cite: 7] */
+    transform: scale(1.02);
+}
