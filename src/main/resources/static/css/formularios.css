@@ -33,20 +33,31 @@ body{
 
 /* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
+/* FORMULARIO DE NOVO ALERTA */
 
-/* MEXER NA ESTILIZAÇÃO DA POP UP */
-
-#caixa-form-gerar-alerta {
-  display: flex;
+/* ESCURECENDO A TELA ATRAS */
+.form-overlay{
+  position: fixed;
+  /* border: solid 5px red; */
   justify-content: center;
-  justify-self: center;
-  /* width: 250px; */
-  /* height: 250px; */
-  border: solid gray 1px;
-  border-radius: 10px;
-  background-color: #ffffff;
-  margin: 50px 0px 0px 0px; 
+  align-items: center;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
 }
+/* MEXER NA ESTILIZAÇÃO DA POP UP */
+#caixa-form-gerar-alerta {
+  display: none;
+  /* position: fixed; */
+  /* align-self: center; */
+  justify-self: center;
+  border: solid gray 1px;
+  border-radius: 15px;
+  background-color: #ffffff;
+  /* margin: 50px 0px 0px 0px;  */
+}
+
 
 #form-gerar-alerta {
   padding: 20px;
@@ -124,3 +135,4 @@ transition: 0.1s;
   display: flex;
   justify-content: space-between;
 }
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */

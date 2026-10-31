@@ -13,25 +13,22 @@
          <img class="img-cabecalho" th:src="@{/imagens/Logo_Horizontal_PNG.png}" alt="">
         </a>
         <div class="cx-botoes-cabecalho-usuario">
-            <a href="" class="botao-cabecalho-usuario">Inicio</a>
-            <a href="" class="botao-cabecalho-usuario">Tempo</a>
+            <a href="" class="botao-cabecalho-usuario" >Inicio</a>
+            <a th:href="@{previsao-de-tempo}" class="botao-cabecalho-usuario" th:classappend="${paginaAtual == 'previsao' ? ' ativo' : ''}">Tempo</a>
             <a href="" class="botao-cabecalho-usuario">SMS</a>
             <a href="" class="botao-cabecalho-usuario">Denuncia</a>
-            <a href="" class="botao-cabecalho-usuario">Login</a>
+            <a th:href="@{login}" class="botao-cabecalho-usuario" th:classappend="${paginaAtual == 'login' ? ' ativo' : ''}">Login</a>
         </div> 
     </div>
 
     <div class="cabecalho-dashboard" th:fragment="cabecalho-agente">
         <div class="cx-logo-cabecalho-dashboard">
-            <!-- <span class="material-symbols-outlined">
-                menu
-            </span> -->
             <a href="">
                 <img class="img-cabecalho-dashboard" th:src="@{/imagens/Logo_Horizontal_PNG.png}" alt="">
             </a>
         </div>
         <div class="cx-botoes-dashboard">
-            <a href="" class="botao-dashboard">Alertas</a>
+            <a th:href="@{alertas}" class="botao-dashboard" th:classappend="${paginaAtual == 'alertas' ? ' ativo' : ''}">Alertas</a>
             <a href="" class="botao-dashboard">Denuncias</a>
         </div>
         <div class="cx-cabecalho-perfil-dashboard">

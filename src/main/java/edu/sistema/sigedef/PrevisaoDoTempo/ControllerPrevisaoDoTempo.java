@@ -1,4 +1,4 @@
-package edu.sistema.sigedef;
+package edu.sistema.sigedef.PrevisaoDoTempo;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -115,7 +115,7 @@ public class ControllerPrevisaoDoTempo {
     };
 }
 
-    @GetMapping("Previsao")
+    @GetMapping("previsao-de-tempo")
     public String previsaoTempo(Model model) {
 
         // declarando uma lista da Classe DiaPrevisao
@@ -167,12 +167,20 @@ public class ControllerPrevisaoDoTempo {
             // bem silimilar ao JsonNode aqui estamos buscando dentro do "documento" todas os elemetnos com a tag "previsao"
             NodeList previsoes = documento.getElementsByTagName("previsao");
 
+            // Pegando somente o nome da cidate
+            Element cidadeSolo = documento.getDocumentElement();
+            String cidade = cidadeSolo.getElementsByTagName("nome").item(0).getTextContent();
+            String uf = cidadeSolo.getElementsByTagName("uf").item(0).getTextContent();
+
+            
+            model.addAttribute("cidade", cidade);
+            model.addAttribute("uf", uf);
+
             // for para percorrer os dias com os dados
             for (int i = 0; i < previsoes.getLength(); i++) {
 
                 // aqui instanciamos um Element que ira pegar um elemento separadamente utilizando o I como indice
                 Element previsaoSolo = (Element) previsoes.item(i);
-
                 // Separando os dados em seus respectivos lugarem (Metodos autoexplicativos)
                 String dataOriginal = previsaoSolo.getElementsByTagName("dia").item(0).getTextContent();
 
@@ -203,9 +211,10 @@ public class ControllerPrevisaoDoTempo {
 
                 // enviando para visao
                 model.addAttribute("dias", dias);
-
-
             }
+
+            // apenas para usar para marcar o botao da pagina
+            model.addAttribute("paginaAtual", "previsao");
 
         } catch (IOException | InterruptedException | ParserConfigurationException | SAXException e) {
             e.printStackTrace();
@@ -222,7 +231,7 @@ public class ControllerPrevisaoDoTempo {
             //     System.out.println();
             // }
 
-        return "desenvolvimento/pagina-previsao-do-tempo";
+        return "default/pagina-previsao-do-tempo.html";
     }
     
 }

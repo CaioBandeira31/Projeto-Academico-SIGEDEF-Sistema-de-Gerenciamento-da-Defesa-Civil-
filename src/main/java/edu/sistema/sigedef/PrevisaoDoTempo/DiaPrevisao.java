@@ -1,6 +1,7 @@
-package edu.sistema.sigedef;
+package edu.sistema.sigedef.PrevisaoDoTempo;
 
 public class DiaPrevisao {
+
     private String dia;
     private int max;
     private int min;

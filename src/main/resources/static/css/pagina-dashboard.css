@@ -1,12 +1,10 @@
-/* Corpo Main */
-main{
-    min-height: 321px;
-}
+
 /* Conteúdo principal */
 .conteudo {
     max-width: 1200px;
     margin: 65px auto;
     padding: 0 10px;
+    /* border: solid 1px red; */
 }
 
 .introducao {

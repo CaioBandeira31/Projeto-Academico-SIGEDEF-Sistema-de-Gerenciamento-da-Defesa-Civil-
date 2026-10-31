@@ -1,4 +1,4 @@
-package edu.sistema.sigedef;
+package edu.sistema.sigedef.PrevisaoDoTempo;
 
 import java.util.List;
 
