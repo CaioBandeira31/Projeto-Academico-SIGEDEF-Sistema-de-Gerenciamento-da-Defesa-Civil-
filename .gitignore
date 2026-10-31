@@ -32,5 +32,6 @@ build/
 ### VS Code ###
 .vscode/
 
-# API KEYS
-.ENV
+
+### IGNORANDO CREDENCIAIS DO SMSBARATO ###
+.env
