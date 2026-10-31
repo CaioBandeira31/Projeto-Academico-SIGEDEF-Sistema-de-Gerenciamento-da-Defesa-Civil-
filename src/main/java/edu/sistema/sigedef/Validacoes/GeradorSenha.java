@@ -4,7 +4,7 @@ import java.security.SecureRandom;
 
 public class GeradorSenha {
 
-    public static String gerarSenha() {
+    public String gerarSenha() {
 
         SecureRandom random = new SecureRandom();
 

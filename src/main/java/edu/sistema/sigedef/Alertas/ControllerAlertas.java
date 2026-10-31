@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import edu.sistema.sigedef.Adm.Usuario;
 import edu.sistema.sigedef.Adm.UsuarioRepository;
+import edu.sistema.sigedef.Validacoes.GeradorSenha;
 
 import org.springframework.web.bind.annotation.PostMapping;
 
