@@ -46,5 +46,17 @@ public String login() {
     return "//desenvolvimento/Login.html";
 }
 
+@GetMapping("inicio")
+public String inicio() {
+    return "/desenvolvimento/pagina-inicio.html";
+}
+
+@GetMapping("denuncia")
+public String denuncia() {
+    return "";
+}
+
+
+
  
 }
