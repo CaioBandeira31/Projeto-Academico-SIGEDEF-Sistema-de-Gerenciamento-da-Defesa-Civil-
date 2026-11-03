@@ -1,5 +1,6 @@
 package edu.sistema.sigedef.PrevisaoDoTempo;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,6 +26,10 @@ import org.w3c.dom.Element;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 
@@ -32,6 +37,9 @@ import java.util.Locale;
 
 @Controller 
 public class ControllerPrevisaoDoTempo {
+    
+    @Autowired
+    CidadeRepository repoCidade;
 
     // Switch case para formatar a condição recebida de sigla para o texto correto
     private String traduzirCondicao(String codigo) {
@@ -115,8 +123,29 @@ public class ControllerPrevisaoDoTempo {
     };
 }
 
+
+    @PostMapping("atualizando-cidade")
+    public String postMethodName(@RequestParam int cidade) {
+        repoCidade.attCidade(cidade);
+        
+        return "redirect:dashboard";
+    }
+    
+
+
+
     @GetMapping("previsao-de-tempo")
     public String previsaoTempo(Model model) {
+
+        String codigoCidade;
+
+        Integer intCidade = repoCidade.buscarCidade();
+
+        codigoCidade = intCidade.toString();
+
+        
+
+        String apiLink = "https://servicos.cptec.inpe.br/XML/cidade/7dias/"+codigoCidade+"/previsao.xml";
 
         // declarando uma lista da Classe DiaPrevisao
         List<DiaPrevisao> dias = new ArrayList<>();
@@ -125,7 +154,7 @@ public class ControllerPrevisaoDoTempo {
         HttpClient cliente = HttpClient.newHttpClient();
 
         // depois de estanciars estmaos informando exatamente para o objeto de onde estamos buscando os dados(HTTP)
-        HttpRequest requisicao = HttpRequest.newBuilder().uri(URI.create("https://servicos.cptec.inpe.br/XML/cidade/7dias/2580/previsao.xml")).GET().build();
+        HttpRequest requisicao = HttpRequest.newBuilder().uri(URI.create(apiLink)).GET().build();
 
         // Try catch para controle do codigo, para sabermos se havera algum erro 
         try {
@@ -231,6 +260,8 @@ public class ControllerPrevisaoDoTempo {
             //     System.out.println();
             // }
 
+
+            System.out.println("------------------   "+apiLink);
         return "default/pagina-previsao-do-tempo.html";
     }
     

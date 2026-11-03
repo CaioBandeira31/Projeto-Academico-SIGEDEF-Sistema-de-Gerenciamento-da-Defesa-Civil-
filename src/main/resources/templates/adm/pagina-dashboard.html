@@ -43,6 +43,19 @@
                 </div>
             </div>
         </div>
+        <div>
+            <form th:action="@{/atualizando-cidade}" th:method="post">
+                <select th:name="cidade">
+                    <option value="244">São Paulo</option>
+                    <option value="5250">Sorocaba</option>
+                    <option value="339">Alambari</option>
+                    <option value="2241">Guareí</option>
+                    <option value="5345">Tatui</option>
+                    <option value="2580">Itapetininga</option>
+                </select>
+                <button type="submit">Selecionar</button>
+            </form>
+        </div>
     </main>
 
     <footer th:replace="~{fragments/rodape :: rodape-padrao}"></footer>

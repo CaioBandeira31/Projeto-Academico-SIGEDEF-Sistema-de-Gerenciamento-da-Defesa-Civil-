@@ -35,3 +35,6 @@ build/
 
 ### IGNORANDO CREDENCIAIS DO SMSBARATO ###
 .env
+
+# Configurações locais do Spring Boot
+/src/main/resources/application.properties

@@ -57,6 +57,9 @@ main{
 /* Quando o mouse passa sobre a barra */
 ::-webkit-scrollbar-thumb:hover {
     background-color: #111e38;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 /* RESET CSS ACIMA */

@@ -23,4 +23,18 @@ public String paginaLogin(Model model) {
     return "default/pagina-login.html";
 }
 
+// pagina inicial
+@GetMapping("/")
+public String paginaInicial(Model model) {
+
+    model.addAttribute("paginaAtual", "/");
+    return "default/pagina-inicio.html";
+}
+
+@GetMapping("termos")
+public String getMethodName() {
+
+    return "default/termos.html";
+}
+
 }

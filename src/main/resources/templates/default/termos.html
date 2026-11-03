@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - SIGEDEF</title>
+    <link rel="stylesheet" th:href="@{/css/faq.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=account_circle,mail,call" />
+</head>
+<body>
+    
+    <header th:replace="~{fragments/cabecalho :: cabecalho-usuario}"></header>
+    <main class="faq-container">
+        <h1>TERMO DE CONSENTIMENTO PARA TRATAMENTO DE DADOS PESSOAIS E RECEBIMENTO DE ALERTAS</h1>
+
+        <p class="subtitulo">
+            Sistema Integrado de Gestão de Denúncias e Eventos – SIGEDEF<br>
+            Ao fornecer seu número de telefone para cadastro no Sistema Integrado de Gestão de Denúncias e Eventos (SIGEDEF), o titular declara estar ciente e de acordo com as condições estabelecidas neste Termo de Consentimento.
+        </p>
+        <div class="faq-pergunta">
+            <h2>1. FINALIDADE DO TRATAMENTO</h2>
+        </div>
+        <p class="faq-resposta">
+            O número de telefone informado será utilizado pelo SIGEDEF exclusivamente para o envio de mensagens SMS contendo alertas, notificações e comunicados relacionados a ocorrências, situações de risco, eventos relevantes e possíveis situações de emergência na região de interesse do usuário.
+        </p>
+
+        <div class="faq-pergunta">
+            <h2>2. UTILIZAÇÃO DOS DADOS PESSOAIS</h2>
+        </div>
+        <p class="faq-resposta">
+            O SIGEDEF realizará o tratamento do número de telefone fornecido com a finalidade específica de viabilizar a comunicação entre o sistema e o cidadão. Os dados não deverão ser utilizados para finalidades comerciais, publicidade ou envio de conteúdos não relacionados aos serviços de alerta da plataforma.
+        </p>
+        <div class="faq-pergunta">
+            <h2>3. COMPARTILHAMENTO E PROTEÇÃO DOS DADOS</h2>
+        </div>
+        <p class="faq-resposta">
+            Os dados pessoais serão tratados de acordo com os princípios e disposições da Lei nº 13.709/2018 – Lei Geral de Proteção de Dados Pessoais (LGPD). O acesso às informações deverá ser restrito a pessoas e serviços autorizados, adotando-se medidas de segurança para prevenir acessos não autorizados, vazamentos e utilizações indevidas.
+        </p>
+        <div class="faq-pergunta">
+            <h2>4. VOLUNTARIEDADE DO CONSENTIMENTO</h2>
+        </div>
+        <p class="faq-resposta">
+            O fornecimento do número de telefone e a autorização para recebimento de alertas são voluntários. A recusa em conceder o consentimento não deverá impedir o acesso às demais funcionalidades do sistema que não dependam desse tratamento.
+        </p>
+        <div class="faq-pergunta">
+            <h2>5. REVOGAÇÃO DO CONSENTIMENTO</h2>
+        </div>
+        <p class="faq-resposta">
+            O titular poderá revogar seu consentimento a qualquer momento, mediante solicitação por meio dos canais disponibilizados pelo responsável pelo sistema. Após a revogação, o número de telefone deixará de ser utilizado para o envio de novos alertas, ressalvadas as hipóteses legais de conservação dos dados previstas na legislação vigente.
+        </p>
+        <div class="faq-pergunta">
+            <h2>6. CIÊNCIA E AUTORIZAÇÃO</h2>
+        </div>
+        <p class="faq-resposta">
+            Ao fornecer seu número de telefone, o titular declara que leu e compreendeu as informações apresentadas, autorizando, de forma livre, informada e inequívoca, o tratamento de seu número de telefone para a finalidade específica de recebimento de alertas e notificações por SMS enviados pelo SIGEDEF.
+        </p>
+        <div class="faq-pergunta">
+            <h2>Última atualização: Novembro de 2026.</h2>
+        </div>
+    </main>
+
+    <footer th:replace="~{fragments/rodape :: rodape-padrao}"></footer>
+</body>
+</html>
