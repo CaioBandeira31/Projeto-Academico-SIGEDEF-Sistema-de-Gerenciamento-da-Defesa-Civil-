@@ -1,0 +1,20 @@
+<!-- formulario de novo alerta -->
+<div class="form-overlay" th:fragment="formulario-alerta">
+    <div id="caixa-form-gerar-alerta">
+        <form th:method="post" th:action="@{/novo-alerta}" id="form-gerar-alerta">
+            <h1 id="titulo-emissao-alerta">Emissão de Alerta Oficial</h1>
+            <label for="titulo-alerta" class="label-form-gerar-alerta">Titulo do alerta</label>
+            <br>
+            <input type="text" maxlength="127" placeholder="Titulo" id="titulo-alerta" th:name="titulo" required>
+            <br>
+            <label for="descricao-alerta" class="label-form-gerar-alerta">Mensagem do alerta</label>
+            <br>
+            <textarea type="text" maxlength="255" placeholder="Mensagem..." id="descricao-alerta" th:name="mensagem" required></textarea>
+            <br>
+            <div class="caixa-botoes">
+                <button type="button" class="botao-cancelar-alerta" onclick="cancelarAlerta()">CANCELAR</button>
+                <button type="submit" class="botao-enviar-alerta">GERAR ALERTA</button>
+            </div>
+        </form>
+    </div>
+</div>

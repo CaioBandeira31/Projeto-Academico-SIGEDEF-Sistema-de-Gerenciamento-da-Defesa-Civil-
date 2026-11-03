@@ -1,4 +1,4 @@
-package edu.sistema.sigedef;
+package edu.sistema.sigedef.sms;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;

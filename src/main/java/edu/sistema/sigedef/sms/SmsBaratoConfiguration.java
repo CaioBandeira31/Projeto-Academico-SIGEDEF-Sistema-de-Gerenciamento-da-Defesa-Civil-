@@ -1,4 +1,4 @@
-package edu.sistema.sigedef;
+package edu.sistema.sigedef.sms;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

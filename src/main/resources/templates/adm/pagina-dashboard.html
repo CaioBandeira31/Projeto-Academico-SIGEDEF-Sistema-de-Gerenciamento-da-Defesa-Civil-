@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Usuários - SIGEDEF</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/pagina-dashboard.css}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=account_circle,mail,call" />
+</head>
+<body>
+
+    <header th:replace="~{fragments/cabecalho :: cabecalho-adm}"></header>
+    <main class="conteudo">
+
+        <div class="introducao">
+            <h1>Controle de Usuários</h1>
+            <p>Gerencie os operadores, técnicos e administradores autorizados
+                a emitir comunicados e analisar denúncias.</p>
+            </div>
+
+        <div class="painel">
+
+            <div class="barra">
+                <input type="text"
+                    class="pesquisa"
+                    placeholder=" Buscar usuário por nome, cargo ou e-mail...">
+
+                <button class="adicionar">ADICIONAR USUÁRIO</button>
+            </div>
+
+            <div class="usuario">
+                <div class="cara">
+                    <h3>Carlos Eduardo Silva
+                        <span class="administrador">ADMINISTRADOR</span>
+                    </h3>
+                    <p>Coordenador Geral de Defesa Civil • carlos.silva@itapetininga.sp.gov.br</p>
+                </div>
+                <div class="botao">
+                    <button class="editar">EDITAR</button>
+                    <button class="excluir">EXCLUIR</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer th:replace="~{fragments/rodape :: rodape-padrao}"></footer>
+</body>
+</html>
