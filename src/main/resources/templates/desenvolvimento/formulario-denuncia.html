@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+  <link rel="stylesheet" th:href="@{/css/formulario-denuncia.css}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=account_circle,mail,call" />
+
+</head>
+<body>
+    <header th:replace="~{fragments/cabecalho :: cabecalho-usuario}"></header>
+    <Script th:src="@{/javascript/botaopressionado.js}" lang="javascript"></Script>
+    
+    <main>
+      <div id="caixa-principal-denuncia">
+        <div id="caixa-titulo-denuncia">
+          <h1 id="titulo-denuncia">Formulário de Registro de Denúncias</h1>
+          <p id="subtitulo-denuncia">Preencha os campos abaixo com o máximo de informações possível para facilitar a análise do SIGEDEF.</p>
+        </div>
+        <div id="caixa-form-denuncia">
+          <form th:action="@{/formdenuncia}" th:method="post">
+            <div id="caixa-sup-denuncia">
+              <div id="caixa-sup-esq">
+                <h2 class="sequencia-denuncia">1. Locallização da Ocorrência</h2>
+                <label for="endereco" class="label-denuncia">Endereço Completo (Rua, Número)</label>
+                <input type="text" placeholder="Ex: Rua dos Bobos, 0" id="endereco" required>
+                <div id="caixa-dados-endereco">
+                  <div class="caixa-tipo-endereco" id="caixa-tipo-endereco1">
+                    <label for="bairro">Bairro</label>
+                    <input type="text" id="bairro" placeholder="Ex: Centro" required>
+                  </div>
+                  <div class="caixa-tipo-endereco" id="caixa-tipo-endereco2">
+                    <label for="cidade">Cidade</label>
+                    <input type="text" id="cidade" placeholder="Ex: Itapetininga" required>
+                  </div>
+                  <div class="caixa-tipo-endereco" id="caixa-tipo-endereco3">
+                    <label for="cep">CEP</label>
+                    <input type="text" id="cep" placeholder="Ex: 123.456.789-01" required>
+                  </div>
+                </div>
+                <label for="referencia">Ponto de Referência</label>
+                <input type="text" id="referencia" placeholder="Ex: Perto do cafundó de Judas">
+              </div>
+              <div id="caixa-sup-direita">
+                <h3 id="titulo-anonimo">Identificação do Denunciante</h3>
+                
+                <div class="escolha-anonimo">
+                  <input type="radio" id="op1" name="denuncia">
+                  <label for="op1">Usar meus dados de cadastro</label>
+                </div>
+                <div class="escolha-anonimo">
+                  <input type="radio" id="op2" name="denuncia">
+                  <label for="op2">Denúncia Anônima</label>
+                </div>
+
+                <label for="observacao" id="label-observacao">Observação sobre anonimato</label>
+                <textarea name="" id="observacao" cols="30" rows="10" maxlength="512" placeholder="Seus dados esão protegidos, confia."></textarea>
+              </div>
+            </div>
+            <div id="caixa-inf-denuncia">
+              <h2 class="sequencia-denuncia">2. Tipo de Ocorrência</h2>
+              <div id="caixa-botoes">
+                <button class="tipo-ocorrencia" id="ocorrencia1" type="button">Alagamento</button>
+                <button class="tipo-ocorrencia" id="ocorrencia2" type="button">Risco de Desmoronamento</button>
+                <button class="tipo-ocorrencia" id="ocorrencia3" type="button">Queda de Árvore</button>
+                <button class="tipo-ocorrencia" id="ocorrencia4" type="button">Outros</button>
+              </div>
+              <h2 class="sequencia-denuncia">3. Descrição Detalhada da Ocorrência</h2>
+              <div id="descricao-fatos">
+                <label for="descricao">Descrição dos fatos constatados</label>
+                <textarea name="" id="descricao" cols="30" rows="10" maxlength="512" placeholder="Descreva os detalhes, nível de urgência, pessoas afetas, a possibilidade do rebaixamento do corinthians etc. "></textarea>
+              </div>
+            </div>
+
+            <div id="caixa-botoes-final">
+              <button type="submit" id="botao-cancelar-denuncia">cancelar</button>
+              <button type="submit" id="botao-enviar-denuncia">enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer th:replace="~{fragments/rodape :: rodape-padrao}"></footer>
+</body>
+</html>

@@ -46,5 +46,9 @@ public String login() {
     return "//desenvolvimento/Login.html";
 }
 
+ @GetMapping("denuncia")
+ public String denuncia() {
+     return "/desenvolvimento/formulario-denuncia.html";
+ }
  
 }
