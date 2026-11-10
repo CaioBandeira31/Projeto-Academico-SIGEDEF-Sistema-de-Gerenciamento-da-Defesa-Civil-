@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="cabecalho-usuario" th:fragment="cabecalho-usuario">
-        <a href="">
+        <a th:href="@{/}">
          <img class="img-cabecalho" th:src="@{/imagens/Logo_Horizontal_PNG.png}" alt="">
         </a>
         <div class="cx-botoes-cabecalho-usuario">
@@ -23,7 +23,7 @@
 
     <div class="cabecalho-dashboard" th:fragment="cabecalho-agente">
         <div class="cx-logo-cabecalho-dashboard">
-            <a href="">
+            <a th:href="@{/}">
                 <img class="img-cabecalho-dashboard" th:src="@{/imagens/Logo_Horizontal_PNG.png}" alt="">
             </a>
         </div>
@@ -48,7 +48,7 @@
             <!-- <span class="material-symbols-outlined">
                 menu
             </span> -->
-            <a href="">
+            <a th:href="@{/}">
                 <img class="img-cabecalho-dashboard" th:src="@{/imagens/Logo_Horizontal_PNG.png}" alt="">
             </a>
         </div>
@@ -59,7 +59,7 @@
         </div>
         <div class="cx-cabecalho-perfil-dashboard">
             <div class="linha-cabecalho-dashboard"></div>
-            <a href="" class="botao-cabecalho-perfil-dashboard">
+            <a th:href="@{/}" class="botao-cabecalho-perfil-dashboard">
                 <span class="material-symbols-outlined">
                     account_circle
                 </span>

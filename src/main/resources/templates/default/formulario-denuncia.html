@@ -11,7 +11,7 @@
 </head>
 <body>
     <header th:replace="~{fragments/cabecalho :: cabecalho-usuario}"></header>
-    <Script th:src="@{/javascript/botaopressionado.js}" lang="javascript"></Script>
+    <script th:src="@{/js/botaopressionado.js}" lang="javascript"></script>
     
     <main>
       <div id="caixa-principal-denuncia">
@@ -20,7 +20,7 @@
           <p id="subtitulo-denuncia">Preencha os campos abaixo com o máximo de informações possível para facilitar a análise do SIGEDEF.</p>
         </div>
         <div id="caixa-form-denuncia">
-          <form th:action="@{/formdenuncia}" th:method="post">
+          <form th:action="@{/formdenuncia}" th:method="post" id="form-denuncia">
             <div id="caixa-sup-denuncia">
               <div id="caixa-sup-esq">
                 <h2 class="sequencia-denuncia">1. Locallização da Ocorrência</h2>
@@ -47,12 +47,13 @@
                 <h3 id="titulo-anonimo">Identificação do Denunciante</h3>
                 
                 <div class="escolha-anonimo">
-                  <input type="radio" id="op1" name="denuncia">
-                  <label for="op1">Usar meus dados de cadastro</label>
+                  <input type="radio" id="op1" name="denuncia" value="mostrar">
+                  <label for="op1" class="texto-radio-anonimo">Usar meus dados de cadastro</label>
+                  <div th:replace="~{fragments/dados-anonimo :: dados-pessoais}"></div>
                 </div>
                 <div class="escolha-anonimo">
-                  <input type="radio" id="op2" name="denuncia">
-                  <label for="op2">Denúncia Anônima</label>
+                  <input type="radio" id="op2" name="denuncia" value="esconder">
+                  <label for="op2" class="texto-radio-anonimo" >Denúncia Anônima</label>
                 </div>
 
                 <label for="observacao" id="label-observacao">Observação sobre anonimato</label>
@@ -62,20 +63,22 @@
             <div id="caixa-inf-denuncia">
               <h2 class="sequencia-denuncia">2. Tipo de Ocorrência</h2>
               <div id="caixa-botoes">
-                <button class="tipo-ocorrencia" id="ocorrencia1" type="button">Alagamento</button>
-                <button class="tipo-ocorrencia" id="ocorrencia2" type="button">Risco de Desmoronamento</button>
-                <button class="tipo-ocorrencia" id="ocorrencia3" type="button">Queda de Árvore</button>
-                <button class="tipo-ocorrencia" id="ocorrencia4" type="button">Outros</button>
+                <input class="tipo-ocorrencia" id="ocorrencia1" type="button" value="Alagamento">
+                <input class="tipo-ocorrencia" id="ocorrencia2" type="button" value="Risco de Desmoronamento">
+                <input class="tipo-ocorrencia" id="ocorrencia3" type="button" value="Queda de Árvore">
+                <input class="tipo-ocorrencia" id="ocorrencia4" type="button" value="Outros">
+                
+                <input type="hidden" id="opcao-selecionada" name="opcao" value="">
               </div>
               <h2 class="sequencia-denuncia">3. Descrição Detalhada da Ocorrência</h2>
               <div id="descricao-fatos">
                 <label for="descricao">Descrição dos fatos constatados</label>
-                <textarea name="" id="descricao" cols="30" rows="10" maxlength="512" placeholder="Descreva os detalhes, nível de urgência, pessoas afetas, a possibilidade do rebaixamento do corinthians etc. "></textarea>
+                <textarea name="" id="descricao" cols="30" rows="10" maxlength="512" placeholder="Descreva os detalhes, nível de urgência, pessoas afetas, a possibilidade do rebaixamento do corinthians etc. " required></textarea>
               </div>
             </div>
 
             <div id="caixa-botoes-final">
-              <button type="submit" id="botao-cancelar-denuncia">cancelar</button>
+              <a th:href="@{/}"><button type="button" id="botao-cancelar-denuncia">cancelar</button></a>
               <button type="submit" id="botao-enviar-denuncia">enviar</button>
             </div>
           </form>
