@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 @Table(name="usuario")
 public class Usuario {
 
-    @Id 
+    @Id
     private String matricula;
 
     @Column(name = "nome")

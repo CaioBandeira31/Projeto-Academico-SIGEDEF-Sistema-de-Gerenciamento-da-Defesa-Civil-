@@ -261,7 +261,7 @@ public class ControllerPrevisaoDoTempo {
             // }
 
 
-            System.out.println("------------------   "+apiLink);
+            // System.out.println("------------------   "+apiLink);
         return "default/pagina-previsao-do-tempo.html";
     }
     
