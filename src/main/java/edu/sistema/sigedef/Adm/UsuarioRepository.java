@@ -18,7 +18,7 @@ public class UsuarioRepository {
 
     @Transactional
     public void novoUsuario(Usuario usuario){
-        Query query = em.createNativeQuery("insert into alerta (nome, data_nascimento, CPF, adm, senha) values (:nome, :data_nascimento, :cpf, :adm, :senha)");
+        Query query = em.createNativeQuery("insert into usuario (nome, data_nascimento, CPF, adm, senha) values (:nome, :data_nascimento, :cpf, :adm, :senha)");
         query.setParameter("nome", usuario.getNome());
         query.setParameter("data_nascimento", usuario.getDataNascimento());
         query.setParameter("matricula_agente", usuario.getCpf());
