@@ -19,7 +19,7 @@ main {
 }
 
 #caixa-form-denuncia {
-  /* width: 92%; */
+  /* max-width: 92%; */
   background-color: white;
   border-radius: 20px;
   border: solid 1px gray;
@@ -35,6 +35,10 @@ main {
  margin-bottom: 30px;
 }
 
+#titulo-denuncia, .sequencia-denuncia, #titulo-anonimo {
+  color: #0b2d4d;
+}
+
 .sequencia-denuncia{
   margin: 0px 0px 15px 0px;
 }
@@ -48,14 +52,23 @@ main {
   display: flex;
 }
 
-#endereco, #bairro, #cidade, #cep, #referencia {
+#endereco, #bairro, #cidade, #cep, #referencia, .dado-anonimo {
   height: 40px;
   border-radius: 7px;
   border: solid 1px gray;
   margin: 2px 0px 20px 0px;
   padding: 0px 0px 0px 10px;
   width: 100%;
-  font-size: 16px;
+  font-weight: bold;
+}
+
+
+
+#endereco:focus, #bairro:focus, #cidade:focus, #cep:focus, #referencia:focus, .dado-anonimo:focus {
+transition: 0.3s;
+background-color: #0b2d4d;
+color: #ffffff;
+font-weight: bold;
 }
 
 #caixa-tipo-endereco2 {
@@ -81,6 +94,35 @@ main {
 .escolha-anonimo {
   margin: 5px 0px ;
 }
+
+#caixa-dados-pessoais {
+  margin: 10px 0px ;
+}
+
+#op1, #op2 {
+  height: 15px;
+  width: 15px;
+  align-self: flex-end;
+}
+
+.texto-radio-anonimo {
+  justify-self: start;
+}
+
+#caixa-dados-pessoais {
+  display: none;
+  flex-direction: column;
+}
+
+/* .dado-anonimo {
+  height: 40px;
+  padding: 0px 15px;
+  font-size: 16px;
+  border: solid 1px lightgray;
+  border-radius: 30px;
+  background-color: #f4f7fa;
+} */
+
 
 #label-observacao {
   margin: 5px 0px 0px 0px;
@@ -114,10 +156,10 @@ main {
 
 .tipo-ocorrencia:hover {
   cursor: pointer;
-  transition: 0.3s;
+  /* transition: 0.3s;
   background-color: #0b2d4d;
   color: #ffffff;
-  font-weight: bold;
+  font-weight: bold; */
 }
 
 #caixa-botoes {

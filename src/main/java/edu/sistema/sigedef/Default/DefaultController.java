@@ -37,4 +37,10 @@ public String getMethodName() {
     return "default/termos.html";
 }
 
+@GetMapping("denuncia")
+public String paginaDenunci() {
+    return "default/formulario-denuncia.html";
+}
+
+
 }
