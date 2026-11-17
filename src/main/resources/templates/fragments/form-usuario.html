@@ -1,0 +1,43 @@
+
+
+<head>
+  <link rel="stylesheet" href="/src/main/resources/static/css/formulario-usuario.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=photo_camera">
+</head>
+<div class="form-overlay" th:fragment="form-add-usuario">
+  <div id="caixa-principal-add-usuario">
+      <div id="caixa-sup">
+        <h1 id="titulo-cadastro">Cadastrar Usuário</h1>
+        <p id="subtitulo-cadastro">Preencha os dados para liberar o acesso ao sistema</p>
+    </div>
+    <div id="caixa-form-cadastro">
+      <form  th:action="@{/cadastro}" th:method="post" id="form-usuario">
+        <label for="nome">Nome completo</label>
+        <input type="text" id="nome" required>
+        <div id="caixa-dois-inputs-usuario">
+          <div id="caixa-um-usuario">
+            <label for="cpf">CPF</label>
+            <input type="text" id="cpf" required>
+          </div>
+          <div id="caixa-dois-usuario">
+            <label for="dtnasc">Data de nascimento</label>
+            <input type="date" id="dtnasc" required>
+          </div>
+        </div>
+        <div id="caixa-foto-usuario">
+          <span class="material-symbols-outlined" id="icone-camera">photo_camera</span>
+          <div id="texto-foto-usuario">
+            <h4 id="titulo-foto-usuario">Adicionar foto do usuario</h4>
+            <p id="texto-foto-usuario">JPG ou PNG | máximo de 15MB</p>
+          </div>
+          <label for="file" id="label-file">selecionar</label>
+          <input type="file" id="file" class="esconder-botao-file" required>
+        </div>
+        <div id="caixa-botao-usuario">
+          <button type="button" id="botao-cancelar-usuario" onclick="cancelarUsuario()">cancelar</button>
+          <button type="submit" id="botao-cadastrar-usuario">cadastrar usuário</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

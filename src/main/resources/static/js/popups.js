@@ -16,3 +16,14 @@ function cancelarAlerta() {
     document.getElementsByClassName("form-overlay")[0].style.display = "none";
 }
 // /////////////////////////////////////////////////
+
+
+function novoUsuario() {
+    document.getElementById("caixa-principal-add-usuario").style.display = "flex";
+    document.getElementsByClassName("form-overlay")[0].style.display = "flex";
+}
+
+function cancelarUsuario() {
+    document.getElementById("caixa-principal-add-usuario").style.display = "none";
+    document.getElementsByClassName("form-overlay")[0].style.display = "none";
+}
