@@ -2,10 +2,98 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/pagina-gestao-denuncias.css}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=account_circle,mail,call" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Denuncias</title>
 </head>
-<body>
-    
+<body> 
+    <header th:replace="~{fragments/cabecalho :: cabecalho-agente}"></header>
+    <main class="caixa-principal-gesta-denuncias">
+        
+        <div class="caixa-das-divs">    
+            <h1 class="titulo-gestao-denuncias">Gestão de Denuncias Recebidas</h1>
+            <div class="caixa-dados">
+                <div class="caixa-valores-dados" >
+                    <h2 class="escrita-caixa-dados">Total de Denúncias</h2>
+                    <p class="valores-dados">290</p>
+                </div>
+                <div class="caixa-valores-dados" id="analise">
+                    <h2 class="escrita-caixa-dados">Em Análise</h2>
+                    <p class="valores-dados" id="azul">10</p>
+                </div>
+                <div class="caixa-valores-dados" id="andamento">
+                    <h2 class="escrita-caixa-dados">Em Andamento</h2>
+                    <p class="valores-dados" id="laranja">100</p>
+                </div>
+                <div class="caixa-valores-dados" id="resolvidas">
+                    <h2 class="escrita-caixa-dados">Resolvidas</h2>
+                    <p class="valores-dados" id="verde">9</p>
+                </div>
+            </div>
+            <div class="caixa-filtro">
+                <input class="input-filtro" type="text" name="" id="" placeholder="Insira o protocolo da Denuncia...">
+                <div class="caixa-data">
+                    <input class="input-filtro" value="2026-01-01" type="date" name="" id="">
+                    <p class="escrita-filtro">até</p>
+                    <input class="input-filtro" value="2026-12-31" type="date" name="" id="">
+                </div>
+                <select class="input-filtro" name="" id="">
+                    <option value="" selected disabled hidden>Situação</option>
+                    <option value="ANALISE">Em análise</option>
+                    <option value="ANDAMENTO">Em andamento</option>
+                    <option value="RESOLVIDA">Resolvida</option>
+                </select>
+                <select class="select-filtro" name="" id="">
+                    <option value="" selected disabled hidden>Risco</option>
+                    <option value="BAIXO">Baixo</option>
+                    <option value="MEDIO">Médio</option>
+                    <option value="ALTO">Alto</option>
+                    <option value="CRITICO">Critico</option>
+                </select>
+                <select class="select-filtro" name="" id="">
+                    <option value="" selected disabled hidden>Tipo</option>
+                    <option value="ALAGAMENTO">Alagamento</option>
+                    <option value="RISCO_DESMORONAMENTO">Risco de Desabamento</option>
+                    <option value="INCENDIO">Incêndio</option>
+                    <option value="QUEDA_ARVORE">Queda de Árvore</option>
+                    <option value="OUTROS">Outros</option>
+                </select>
+            </div>
+            <div class="caixa-informacoes-denuncia">
+                <table class="tabela-dados-denuncias">
+                    <tr class="cabecalho-dados">
+                        <th class="celula-cabecalho">Protocolo</th>
+                        <th class="celula-cabecalho">Data/Hora</th>
+                        <th class="celula-cabecalho">Tipo de Ocorrencia</th>
+                        <th class="celula-cabecalho">Endereço</th>
+                        <th class="celula-cabecalho">Nível de Risco</th>
+                        <th class="celula-cabecalho">Situação</th>
+                        <th class="celula-cabecalho">Ações</th>
+                    </tr>
+                    <tr>
+                        <td class="celula-dados">2026121</td>
+                        <td class="celula-dados">12/01/2026 08:30</td>
+                        <td class="celula-dados">Risco de Desabamento</td>
+                        <td class="celula-dados">Nelson Leme dos Santos, 14</td>
+                        <td class="celula-dados">Critico</td>
+                        <td class="celula-dados">Em Andamento</td>
+                        <td class="celula-dados"><a th:href="@{denuncia}" class="botao-detalhes">Detalhes</a></td>
+                    </tr>
+                </table>
+                <div class="caixa-carrosel">
+                    <button id="botao-pdf" class="botao-gerar-pdf">Gerar PDF</button>
+                    <div class="carrossel">
+                        <button class="botao-carrosel" id="botao-voltar-pagina"><</button>
+                        <button class="botao-carrosel">1</button>
+                        <button class="botao-carrosel" id="botao-avancar-pagina">></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer th:replace="~{fragments/rodape :: rodape-padrao}"></footer>
 </body>
 </html>
