@@ -32,7 +32,7 @@ public class Alerta {
     LocalDateTime dataHora;
 
     @ManyToOne
-    @JoinColumn(name = "agente_matricula")
+    @JoinColumn(name = "matricula_agente")
     private Usuario agente;
 
     protected Alerta (){

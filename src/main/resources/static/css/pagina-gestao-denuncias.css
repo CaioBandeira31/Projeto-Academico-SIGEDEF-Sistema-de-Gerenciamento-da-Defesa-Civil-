@@ -1,0 +1,231 @@
+/* MAIN DA PAGINA */
+.caixa-principal-gesta-denuncias{
+    border: solid 1px red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f7fa;
+}
+
+/* CIXA DAS DIVS */
+.caixa-das-divs{
+    /* border: solid 1px red; */
+    width: 1600px;
+    min-height: 800px;
+}
+/* TITULO */
+.titulo-gestao-denuncias{
+    /* border: solid 1px red; */
+    font-size: 25px;
+    padding-bottom: 15px;
+    padding-top: 25px;
+    color: #0b2d4d;
+}
+
+/* CAIXA DADOS */
+.caixa-dados{
+    /* border: solid 1px red; */
+    display: flex;
+    justify-content: space-between;
+    /* padding-left: 80px; */
+    /* padding-right: 100px; */
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+/* caixa com os valores do dados */
+.caixa-valores-dados{
+    border: solid 1px #99a1aa;
+    border-radius: 15px;
+    width: 200px;
+    height: 80px;
+    padding: 10px;
+    background-color: #FFFFFF;
+}
+
+/* escrita da caixa dados */
+.escrita-caixa-dados{
+    color: #0b2d4d;
+    font-size: 12px;
+}
+
+/* valores dados */
+.valores-dados{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* coloração */
+#resolvidas{
+    border-color: 	#16A34A;
+    background-color: #DCFCE7;
+}
+#andamento{
+    border-color: #D97706;
+    background-color: #FEF3C7
+}
+#analise{
+    border-color: #3B82F6;
+    background-color: #EFF6FF;
+}
+
+#azul{
+    color: #1E40AF;
+}
+#verde{
+    color: #16A34A;
+}
+#laranja{
+    color: #D97706;
+}
+
+/* CAIXA DOS FILTROS */
+.caixa-filtro{
+    background-color: #ffffff;
+    border: solid 1px #99a1aa;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    
+}
+/* caixa filtro data */
+.caixa-data{
+    /* border: solid 1px gold; */
+    display: flex;
+    align-items: center;
+}
+/* escrita filtro */
+.escrita-filtro{
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 10px;
+}
+/* input data*/
+input[type="date"]{
+    height: 40px;
+    border-radius: 5px;
+    width: 110px;
+    border: solid 1px #CBD5E1;
+    padding: 5px;
+    font-weight: bold;
+}
+/* barra de pesquisa */
+input[type="text"]{
+    height: 40px;
+    width: 550px;
+    border-radius: 5px;
+    border: solid 1px #CBD5E1;
+    padding-left: 5px;
+    font-weight: bold;
+}
+/* select */
+select{
+    height: 40px;
+    width: 150px;
+    border-radius: 5px;
+    border: solid 1px #CBD5E1;
+    appearance: none;
+    text-align: center;
+    color: #0b2d4d;
+    font-weight: bold;
+}
+
+/* caixa com a tabela de dados */
+.caixa-informacoes-denuncia{
+    border: solid 2px #CBD5E1;
+    border-radius: 10px;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+/* tabela de dados */
+.tabela-dados-denuncias{
+    /* border: solid 1px #CBD5E1; */
+    border-radius: 5px;
+    border-collapse: collapse;
+    width: 100%;
+}
+/* celula de dados */
+.celula-dados{
+    border: solid 2px #0b2d4d7e;
+    border-right: none;
+    border-left: none;
+    padding-left: 5px;;
+    height: 40px;
+}
+/* celula escrita cabecalho */
+.celula-cabecalho{
+    /* border: solid 1px;
+    border-right: none;
+    border-left: none; */
+    border-radius: 10px;
+    padding-left: 5px;
+    text-align: left;
+    background-color: #EFF6FF;
+    color: #0b2d4d; 
+    height: 40px;
+}
+
+/* caixa com os botoes de pdf e carrosel */
+.caixa-carrosel{
+    /* border: solid 1px gold; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    background-color: #EFF6FF;
+    border-radius: 10px;
+}
+/* carrossel */
+.carrossel{
+    /* border: solid 1px red; */
+    justify-self: center;
+    align-self: center;
+}
+/* botao pdf */
+.botao-gerar-pdf{
+    justify-self: start;
+    align-self: center;
+    border: solid 1px #CBD5E1;
+    height: 30px;
+    width: 80px;
+    color: #0b2d4d; 
+    border-radius: 5px;
+}.botao-gerar-pdf:hover{
+    transition: 0.5s;
+    cursor: pointer;
+    color: #EFF6FF;
+    background-color: #3B82F6;
+}
+/* botoes do carrosel */
+.botao-carrosel{
+    height: 30px;
+    width: 30px;
+    border: solid 1px #CBD5E1;
+    color: #0b2d4d; 
+    border-radius: 5px;
+}.botao-carrosel:hover{
+    transition: 0.5s;
+    cursor: pointer;
+    color: #EFF6FF;
+    background-color: #3B82F6;
+}
+/* botao detalhes */
+.botao-detalhes{
+    border: solid 1px #CBD5E1;
+    color: #0b2d4d; 
+    padding: 5px;
+    width: 70px;
+    height: 20px;
+    border-radius: 5px;
+    font-size: 15px;
+}.botao-detalhes:hover{
+    transition: 0.5s;
+    cursor: pointer;
+    color: #EFF6FF;
+    background-color: #3B82F6;
+}

@@ -39,7 +39,7 @@ public class ControllerAlertas {
         model.addAttribute("alertas", alertas);
 
         model.addAttribute("paginaAtual", "alertas");
-
+        
         return "/agente/pagina-envio-alertas.html";
     }
 
