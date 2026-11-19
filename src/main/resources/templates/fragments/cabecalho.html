@@ -16,7 +16,7 @@
             <a th:href="@{/}" class="botao-cabecalho-usuario" th:classappend="${paginaAtual == '/' ? ' ativo' : ''}">Inicio</a>
             <a th:href="@{previsao-de-tempo}" class="botao-cabecalho-usuario" th:classappend="${paginaAtual == 'previsao' ? ' ativo' : ''}">Tempo</a>
             <a th:href="@{tel}" class="botao-cabecalho-usuario" th:classappend="${paginaAtual == 'tel' ? ' ativo' : ''}">SMS</a>
-            <a th:href="@{denuncia}" class="botao-cabecalho-usuario">Denuncia</a>
+            <a th:href="@{nova-denuncia}" class="botao-cabecalho-usuario" th:classappend="${paginaAtual == 'novaDenuncia' ? ' ativo' : ''}">Denuncia</a>
             <a th:href="@{login}" class="botao-cabecalho-usuario" th:classappend="${paginaAtual == 'login' ? ' ativo' : ''}">Login</a>
         </div> 
     </div>

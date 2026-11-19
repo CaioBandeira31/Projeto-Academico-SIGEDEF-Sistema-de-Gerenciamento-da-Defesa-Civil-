@@ -37,10 +37,9 @@ public String getMethodName() {
     return "default/termos.html";
 }
 
-@GetMapping("denuncia")
-public String paginaDenunci() {
+@GetMapping("nova-denuncia")
+public String novaDenuncia(Model container) {
+    container.addAttribute("paginaAtual", "novaDenuncia");
     return "default/formulario-denuncia.html";
 }
-
-
 }
