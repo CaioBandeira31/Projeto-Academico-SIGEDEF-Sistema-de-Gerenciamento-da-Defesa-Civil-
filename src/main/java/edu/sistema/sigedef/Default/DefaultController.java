@@ -17,11 +17,12 @@ public String paginaFaq() {
 }
 
 // pagina de login
-@GetMapping("login")
-public String paginaLogin(Model model) {
-    model.addAttribute("paginaAtual", "login");
-    return "default/pagina-login.html";
-}
+// AGORA DEVERÁ SER USADO UMA CLASSE CONTROLLER ESPECÍFICA PARA O LOGIN
+// @GetMapping("login")
+// public String paginaLogin(Model model) {
+//     model.addAttribute("paginaAtual", "login");
+//     return "default/pagina-login.html";
+// }
 
 // pagina inicial
 @GetMapping("/")

@@ -2,9 +2,13 @@ package edu.sistema.sigedef.Adm;
 
 
 
+import java.util.Optional;
+
+
 import org.springframework.stereotype.Repository;
 
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.NoResultException;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
 import jakarta.transaction.Transactional;
@@ -34,5 +38,19 @@ public class UsuarioRepository {
         query.setParameter("matricula", matricula);
         usuario = (Usuario) query.getSingleResult();
         return usuario;
+    }
+
+    // O MÉTODO ABAIXO FAZ O MESMO QUE O MÉTODO ACIMA, PORÉM RETORNA UMA LISTA DE USUÁRIOS COM APENAS UM USUÁRIO OU RETORNA UMA LISTA VAZIA
+
+    public Optional<Usuario> buscarListaUm(String matricula){
+        Query query = em.createNativeQuery("Select * from usuario where matricula = :matricula", Usuario.class);
+        query.setParameter("matricula", matricula);
+        
+        try {
+            Usuario usuario = (Usuario) query.getSingleResult();
+            return Optional.of(usuario);    
+        } catch (NoResultException e) {
+            return Optional.empty();
+        }
     }
 }
