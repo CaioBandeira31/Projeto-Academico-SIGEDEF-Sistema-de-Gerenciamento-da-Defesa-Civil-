@@ -19,56 +19,89 @@
           <p id="subtitulo-denuncia"></p>
         </div>
         <div id="caixa-form-denuncia">
-          <form th:action="@{/formdenuncia}" th:method="get">
+          <form th:action="@{/denuncia/salvar}" th:method="post">
             <div id="caixa-sup-denuncia">
               <div id="caixa-sup-esq">
                 <h2 class="sequencia-denuncia">Informações da Ocorrencia</h2>
                 <label for="endereco" class="label-denuncia">Endereço</label>
-                <input type="text" id="endereco" readonly disabled>
+                <input type="text" id="endereco" th:value="${denuncia.endereco}" readonly disabled>
                 <div id="caixa-dados-endereco">
                   <div class="caixa-tipo-endereco" id="caixa-tipo-endereco1">
                     <label for="bairro">Bairro</label>
-                    <input type="text" id="bairro" readonly disabled>
+                    <input type="text" id="bairro" th:value="${denuncia.bairro}" readonly disabled>
                   </div>
                   <div class="caixa-tipo-endereco" id="caixa-tipo-endereco2">
                     <label for="cidade">Cidade</label>
-                    <input type="text" id="cidade" readonly disabled>
+                    <input type="text" id="cidade" th:value="${denuncia.cidade}" readonly disabled>
                   </div>
                   <div class="caixa-tipo-endereco" id="caixa-tipo-endereco3">
                     <label for="cep">CEP</label>
-                    <input type="text" id="cep" readonly disabled>
+                    <input type="text" id="cep" th:value="${denuncia.cep}" readonly disabled>
                   </div>
                 </div>
-                <label for="referencia" readonly disabled>Ponto de Referência</label>
-                <input type="text" id="referencia">
+                <label for="referencia">Ponto de Referência</label>
+                <input type="text" id="referencia" th:value="${denuncia.ponto_referencia}" readonly disabled>
             </div>
             </div>
             <div id="caixa-inf-denuncia">
               <h2 class="sequencia-denuncia">Tipo de Ocorrência</h2>
               <div id="caixa-botoes">
-                <button class="tipo-ocorrencia" id="ocorrencia1" type="button">Alagamento</button>
-                <button class="tipo-ocorrencia" id="ocorrencia2" type="button">Risco de Desmoronamento</button>
-                <button class="tipo-ocorrencia" id="ocorrencia3" type="button">Queda de Árvore</button>
-                <button class="tipo-ocorrencia" id="ocorrencia4" type="button">Outros</button>
+                <div id="caixa-botoes">
+                  <button class="tipo-ocorrencia"
+                          th:classappend="${denuncia.tipo_ocorrencia == 'Alagamento'} ? ' selecionado' : ''"
+                          id="ocorrencia1" type="button">
+                      Alagamento
+                  </button>
+
+                  <button class="tipo-ocorrencia"
+                          th:classappend="${denuncia.tipo_ocorrencia == 'Risco de Desmoronamento'} ? ' selecionado' : ''"
+                          id="ocorrencia2" type="button">
+                      Risco de Desmoronamento
+                  </button>
+
+                  <button class="tipo-ocorrencia"
+                          th:classappend="${denuncia.tipo_ocorrencia == 'Queda de Árvore'} ? ' selecionado' : ''"
+                          id="ocorrencia3" type="button">
+                      Queda de Árvore
+                  </button>
+
+                  <button class="tipo-ocorrencia"
+                          th:classappend="${denuncia.tipo_ocorrencia == 'Outros'} ? ' selecionado' : ''"
+                          id="ocorrencia4" type="button">
+                      Outros
+                  </button>
+              </div>
               </div>
               <h2 class="sequencia-denuncia">Descrição da Ocorrência</h2>
               <div id="descricao-fatos">
                 <label for="descricao">Descrição dos fatos constatados</label>
-                <textarea name="" id="descricao" cols="30" rows="10" maxlength="512"></textarea>
+                <textarea name="" id="descricao" cols="30" rows="10" th:text="${denuncia.descricao_denuncia}" readonly disabled maxlength="512"></textarea>
               </div>
               <div>
+                <input type="number" th:name="id" hidden th:value="${denuncia.id}">
                 <h2>Alterar Situação da Ocorrencia</h2>
-                <select class="input-filtro" name="" id="">
+                <p th:text="('Situcação Atual: ' + ${denuncia.situacao})"></p>
+                <select class="input-filtro" th:name="situacao" id="">
                     <option value="" selected disabled hidden>Definir</option>
-                    <option value="ANALISE">Em análise</option>
-                    <option value="ANDAMENTO">Em andamento</option>
-                    <option value="RESOLVIDA">Resolvida</option>
+                    <option value="Em Análise">Em análise</option>
+                    <option value="Em Andamento">Em andamento</option>
+                    <option value="Resolvida">Resolvida</option>
+                </select>
+                
+                <h2 style="margin-top: 15px;">Definir Risco</h2>
+                <p th:text="('Risco Atual: ' + ${denuncia.nivel_risco})"></p>
+                <select class="input-filtro" th:name="nivel_risco" id="">
+                        <option value="" selected disabled hidden>Definir</option>
+                        <option value="Baixo">Baixo</option>
+                        <option value="Medio">Médio</option>
+                        <option value="Alto">Alto</option>
+                        <option value="Crítico">Critico</option>
                 </select>
               </div>
             </div>
 
             <div id="caixa-botoes-final">
-              <button type="submit" id="botao-cancelar-denuncia">Cancelar</button>
+              <button type="submit" id="botao-cancelar-denuncia" th:href="@{/gestao-denuncias}">Cancelar</button>
               <button type="submit" id="botao-enviar-denuncia">Registrar</button>
             </div>
           </form>

@@ -16,7 +16,7 @@ public class AlertasRepository {
     @PersistenceContext
     private EntityManager em;
 
-    // salvando a denuncia
+    // Salvando o alerta no banco após enviar
     @Transactional
     public void novoAlerta(Alerta alerta ){
         Query query = em.createNativeQuery("insert into alerta (titulo, mensagem, data_hora, matricula_agente) values (:titulo, :mensagem, :data_hora, :matricula_agente)");
