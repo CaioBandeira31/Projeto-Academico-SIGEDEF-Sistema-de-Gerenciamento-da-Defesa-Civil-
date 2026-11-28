@@ -1,5 +1,6 @@
 package edu.sistema.sigedef.denuncias;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
@@ -114,5 +115,42 @@ public class DenunciaRepository {
         query.setParameter("situacao", situacao);
         query.executeUpdate();
     }
+
+    public Denuncia buscarUmaProtocolo(String protocolo){
+        try {
+            Query query = em.createNativeQuery("select * from denuncias where protocolo = :protocolo", Denuncia.class);
+            query.setParameter("protocolo", protocolo);
+            Denuncia denuncia = (Denuncia) query.getSingleResult();
+            return denuncia;
+        } catch (Exception e) {
+            Denuncia denuncia = new Denuncia();
+            return denuncia;
+        }
+ 
+    }
+
+
+    public List<Denuncia> buscarPorFiltros(LocalDateTime inicio,LocalDateTime fim,String situacao,String nivelRisco,String tipoOcorrencia) {
+
+        Query query = em.createNativeQuery("SELECT * FROM denuncias " +"WHERE (:inicio IS NULL OR data_hora >= :inicio) " +"AND (:fim IS NULL OR data_hora < :fim) " +"AND (:situacao IS NULL OR :situacao = '' OR situacao = :situacao) " +"AND (:nivelRisco IS NULL OR :nivelRisco = '' OR nivel_risco = :nivelRisco) " +"AND (:tipoOcorrencia IS NULL OR:tipoOcorrencia = '' OR tipo_ocorrencia = :tipoOcorrencia)",Denuncia.class);
+
+        query.setParameter("inicio", inicio);
+        query.setParameter("fim", fim);
+        query.setParameter("situacao", situacao);
+        query.setParameter("nivelRisco", nivelRisco);
+        query.setParameter("tipoOcorrencia", tipoOcorrencia);
+        List<Denuncia> denuncia = query.getResultList();
+    return denuncia;
+
+    }
+
+
+    public List<Denuncia> buscarListaProtocolo(String protocolo){
+            Query query = em.createNativeQuery("select * from denuncias where protocolo = :protocolo", Denuncia.class);
+            query.setParameter("protocolo", protocolo);
+            List<Denuncia> denuncia = query.getResultList();
+       return denuncia; 
+    }
+
 
 }

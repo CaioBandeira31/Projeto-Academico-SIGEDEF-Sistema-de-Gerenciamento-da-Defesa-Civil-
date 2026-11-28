@@ -24,23 +24,27 @@ public class Usuario {
     private String cpf;
 
     @Column(name = "adm")
-    private  boolean adm;
+    private  String adm;
 
     @Column(name = "senha")
     private String senha;
+
+    @Column(name="")
+    private Byte foto;
 
 
     protected Usuario (){
 
     }
 
-    public Usuario (String matricula, String nome, LocalDate dataNascimento, String cpf, boolean adm, String senha){
+    public Usuario (String matricula, String nome, LocalDate dataNascimento, String cpf, String adm, String senha, Byte foto){
         this.matricula = matricula;
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.cpf = cpf;
         this.adm = adm;
         this.senha = senha;
+        this.foto = foto;
     }
 
     public void setMatricula(String matricula) {
@@ -71,10 +75,10 @@ public class Usuario {
         this.cpf = cpf;
     }
 
-    public void setAdm(boolean adm) {
+    public void setAdm(String adm) {
         this.adm = adm;
     }
-    public boolean getAdm() {
+    public String getAdm() {
         return adm;
     }
 
@@ -85,5 +89,11 @@ public class Usuario {
         this.senha = senha;
     }
     
+    public void setFoto(Byte foto) {
+        this.foto = foto;
+    }
+    public Byte getFoto() {
+        return foto;
+    }
 
 }

@@ -87,7 +87,7 @@ op1.addEventListener("click", () =>{
       document.querySelectorAll("#nome, #telefone").forEach(input => {
         input.value = "";
     });
-      contador++;
+  contador++;
   }
 })
 

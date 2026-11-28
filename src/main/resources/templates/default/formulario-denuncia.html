@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +17,7 @@
       <div id="caixa-principal-denuncia">
         <div id="caixa-titulo-denuncia">
           <h1 id="titulo-denuncia">Formulário de Registro de Denúncias</h1>
-          <p id="subtitulo-denuncia">Preencha os campos abaixo com o máximo de informações possível para facilitar a análise do SIGEDEF.</p>
+          <p id="subtitulo-denuncia">Preencha os campos abaixo com o máximo de informações possível para facilitar a análise do SIGEDEF. (Caso tenha uma denuncia em andamento <a th:href="@{/informacao-denuncia}">Clique Aqui</a>)</p>
         </div>
         <div id="caixa-form-denuncia">
           <form th:action="@{/salvar-denuncia}" th:method="post" id="form-denuncia">
@@ -47,8 +47,8 @@
                 <h3 id="titulo-anonimo">Identificação do Denunciante</h3>
                 
                 <div class="escolha-anonimo">
-                  <input type="hidden" th:name="anonimo" value="0">
                   <input type="checkbox" id="op1" th:name="anonimo" value="1" th:checked="${anonimo == 1}">
+                  <input type="hidden" th:name="anonimo" value="0">
                   <label for="op1" class="texto-radio-anonimo">Informar Dados de Contato</label>
                   <div th:replace="~{fragments/dados-anonimo :: dados-pessoais}"></div>
                 </div>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"> 
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/pagina-pesquisa-denuncia.css}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=account_circle,mail,call" />
+    <title>Pesquisar Denuncias</title>
+</head>
+<body>
+    <header th:replace="~{fragments/cabecalho :: cabecalho-usuario}"></header>
+    <main class="main-informacao-denuncia">
+        <div class="cx-titulo-pagina">
+            <h1>Buscar Denúncias Feitas</h1>
+            <p>Utilize o protocolo da sua denúncia para fazer a busca.</p>
+        </div>
+        <form th:action="@{/pesquisar-denuncia}" th:method="post" class="form-pesquisa-denuncia">
+            <input type="text" th:name="pesquisa" id="barra-pesquisa" placeholder="Insira aqui seu protocolo...">
+            <button type="submit" class="botao-pesquisa">Pesquisar</button>
+        </form>
+        <div class="resultado-denuncia" th:each="d : ${denuncia}">
+            <h2 class="escrita-protocolo" th:text="${d.protocolo}">Protocolo</h2>
+
+            <label for="denunciante">Denunciante</label>
+            <input type="text" name="" id="denunciante" th:value="${d.descricao_denuncia}" class="informacoes-denuncia" disabled>
+            
+            <label for="dataHora">Data e Hora</label>
+            <input type="text" name="" id="dataHora" th:value="${#temporals.format(d.data_hora, 'dd/MM/yyyy HH:mm')}" class="informacoes-denuncia" disabled>
+            
+            <label for="situacao">Situação</label>
+            <input type="text" name="" id="situacao" th:value="${d.situacao}" class="informacoes-denuncia" disabled>
+        </div>
+        <a th:href="@{/nova-denuncia}" class="botao-voltar-denuncia">Volta a Nova Denuncia</a>
+    </main>
+    <footer th:replace="~{fragments/rodape :: rodape-padrao}"></footer>
+</body>
+</html>

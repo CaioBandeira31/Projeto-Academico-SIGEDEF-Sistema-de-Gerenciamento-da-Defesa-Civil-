@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -81,7 +81,8 @@
                 <input type="number" th:name="id" hidden th:value="${denuncia.id}">
                 <h2>Alterar Situação da Ocorrencia</h2>
                 <p th:text="('Situcação Atual: ' + ${denuncia.situacao})"></p>
-                <select class="input-filtro" th:name="situacao" id="">
+                <p th:if="${denuncia.situacao == 'Resolvida'}" th:text="'A Denuncia foi marcada como Resolvida não é mais permitido a alteração deste campo.'"></p>
+                <select class="input-filtro" th:name="situacao" id="" th:disabled="${denuncia.situacao == 'Resolvida'}" >
                     <option value="" selected disabled hidden>Definir</option>
                     <option value="Em Análise">Em análise</option>
                     <option value="Em Andamento">Em andamento</option>
@@ -90,7 +91,8 @@
                 
                 <h2 style="margin-top: 15px;">Definir Risco</h2>
                 <p th:text="('Risco Atual: ' + ${denuncia.nivel_risco})"></p>
-                <select class="input-filtro" th:name="nivel_risco" id="">
+                <p th:if="${denuncia.situacao == 'Resolvida'}" th:text="'A Denuncia foi marcada como Resolvida não é mais permitido a alteração deste campo.'"></p>
+                <select class="input-filtro" th:name="nivel_risco" id="" th:disabled="${denuncia.situacao == 'Resolvida'}">
                         <option value="" selected disabled hidden>Definir</option>
                         <option value="Baixo">Baixo</option>
                         <option value="Medio">Médio</option>

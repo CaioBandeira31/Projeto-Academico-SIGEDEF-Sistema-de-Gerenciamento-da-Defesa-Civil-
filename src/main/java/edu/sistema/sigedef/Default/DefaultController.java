@@ -42,4 +42,9 @@ public String novaDenuncia(Model container) {
     container.addAttribute("paginaAtual", "novaDenuncia");
     return "default/formulario-denuncia.html";
 }
+
+@GetMapping("informacao-denuncia")
+public String informacoesDenuncia(Model container){
+    return"desenvolvimento/pagina-pesquisa-denuncia.html";
+}
 }
