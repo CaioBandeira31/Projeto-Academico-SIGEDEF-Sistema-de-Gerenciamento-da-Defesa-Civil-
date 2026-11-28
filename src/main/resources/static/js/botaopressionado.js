@@ -75,14 +75,20 @@ document.addEventListener("DOMContentLoaded", function () {
 // DO FORMULÁRIO DE DENUNCIAS
 
 const op1 = document.getElementById("op1");
-const op2 = document.getElementById("op2");
 const form_pessoal = document.getElementById("caixa-dados-pessoais");
+let contador = 0;
 
-op1.addEventListener("change", () =>{
-  form_pessoal.style.display = "flex";
-})
-op2.addEventListener("change", () => {
-  form_pessoal.style.display = "none";
+op1.addEventListener("click", () =>{ 
+  if(contador%2 == 0){
+      form_pessoal.style.display = "flex";
+      contador++;
+  }else{
+      form_pessoal.style.display = "none";
+      document.querySelectorAll("#nome, #telefone").forEach(input => {
+        input.value = "";
+    });
+  contador++;
+  }
 })
 
 });

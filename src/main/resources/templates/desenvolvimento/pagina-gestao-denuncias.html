@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" th:href="@{/css/style.css}">
@@ -17,51 +17,59 @@
             <div class="caixa-dados">
                 <div class="caixa-valores-dados" >
                     <h2 class="escrita-caixa-dados">Total de Denúncias</h2>
-                    <p class="valores-dados">290</p>
+                    <p class="valores-dados">[[${total}]]</p>
                 </div>
                 <div class="caixa-valores-dados" id="analise">
                     <h2 class="escrita-caixa-dados">Em Análise</h2>
-                    <p class="valores-dados" id="azul">10</p>
+                    <p class="valores-dados" id="azul">[[${analise}]]</p>
                 </div>
                 <div class="caixa-valores-dados" id="andamento">
                     <h2 class="escrita-caixa-dados">Em Andamento</h2>
-                    <p class="valores-dados" id="laranja">100</p>
+                    <p class="valores-dados" id="laranja">[[${andamento}]]</p>
                 </div>
                 <div class="caixa-valores-dados" id="resolvidas">
                     <h2 class="escrita-caixa-dados">Resolvidas</h2>
-                    <p class="valores-dados" id="verde">9</p>
+                    <p class="valores-dados" id="verde">[[${resolvida}]]</p>
                 </div>
             </div>
-            <div class="caixa-filtro">
-                <input class="input-filtro" type="text" name="" id="" placeholder="Insira o protocolo da Denuncia...">
-                <div class="caixa-data">
-                    <input class="input-filtro" value="2026-01-01" type="date" name="" id="">
-                    <p class="escrita-filtro">até</p>
-                    <input class="input-filtro" value="2026-12-31" type="date" name="" id="">
-                </div>
-                <select class="input-filtro" name="" id="">
-                    <option value="" selected disabled hidden>Situação</option>
-                    <option value="ANALISE">Em análise</option>
-                    <option value="ANDAMENTO">Em andamento</option>
-                    <option value="RESOLVIDA">Resolvida</option>
-                </select>
-                <select class="select-filtro" name="" id="">
-                    <option value="" selected disabled hidden>Risco</option>
-                    <option value="BAIXO">Baixo</option>
-                    <option value="MEDIO">Médio</option>
-                    <option value="ALTO">Alto</option>
-                    <option value="CRITICO">Critico</option>
-                </select>
-                <select class="select-filtro" name="" id="">
-                    <option value="" selected disabled hidden>Tipo</option>
-                    <option value="ALAGAMENTO">Alagamento</option>
-                    <option value="RISCO_DESMORONAMENTO">Risco de Desabamento</option>
-                    <option value="INCENDIO">Incêndio</option>
-                    <option value="QUEDA_ARVORE">Queda de Árvore</option>
-                    <option value="OUTROS">Outros</option>
-                </select>
-            </div>
-            <div class="caixa-informacoes-denuncia">
+                <form th:action="@{/pesquisa-filtro}" th:method="post" class="caixa-filtro">
+                    <input class="input-filtro" type="text" th:name="protocolo" placeholder="Insira o protocolo da Denúncia...">
+
+                    <div class="caixa-data">
+                        <input class="input-filtro" type="date" th:name="dataInicio" value="2026-01-01">
+                        <p class="escrita-filtro">até</p>
+                        <input class="input-filtro" type="date" th:name="dataFim" value="2026-12-31">
+                    </div>
+
+                    <select class="input-filtro" th:name="situacao">
+                        <option value="" selected>Situação</option>
+                        <option value="Em análise">Em análise</option>
+                        <option value="Em andamento">Em andamento</option>
+                        <option value="Resolvida">Resolvida</option>
+                    </select>
+
+                    <select class="select-filtro" th:name="nivelRisco">
+                        <option value="" selected>Risco</option>
+                        <option value="Baixo">Baixo</option>
+                        <option value="Médio">Médio</option>
+                        <option value="Alto">Alto</option>
+                        <option value="Crítico">Crítico</option>
+                    </select>
+
+                    <select class="select-filtro" th:name="tipoOcorrencia">
+                        <option value="" selected>Tipo</option>
+                        <option value="Alagamento">Alagamento</option>
+                        <option value="Risco de Desabamento">Risco de Desabamento</option>
+                        <option value="Incêndio">Incêndio</option>
+                        <option value="Queda de Árvore">Queda de Árvore</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+
+                    <a th:href="@{/gestao-denuncias}"><button type="button" class="botao-pesquisa">Limpar</button></a>
+                    <button type="submit" class="botao-pesquisa">Pesquisar</button>
+
+                </form>
+                <div class="caixa-informacoes-denuncia">
                 <table class="tabela-dados-denuncias">
                     <tr class="cabecalho-dados">
                         <th class="celula-cabecalho">Protocolo</th>
@@ -72,14 +80,17 @@
                         <th class="celula-cabecalho">Situação</th>
                         <th class="celula-cabecalho">Ações</th>
                     </tr>
-                    <tr>
-                        <td class="celula-dados">2026121</td>
-                        <td class="celula-dados">12/01/2026 08:30</td>
-                        <td class="celula-dados">Risco de Desabamento</td>
-                        <td class="celula-dados">Nelson Leme dos Santos, 14</td>
-                        <td class="celula-dados">Critico</td>
-                        <td class="celula-dados">Em Andamento</td>
-                        <td class="celula-dados"><a th:href="@{denuncia}" class="botao-detalhes">Detalhes</a></td>
+                    <tr  th:each="d : ${denuncias}">
+                        <td class="celula-dados">
+                            <input type="number" hidden th:value="${d.id}">
+                            [[${d.protocolo}]]
+                        </td>
+                        <td class="celula-dados" th:text="${#temporals.format(d.data_hora, 'dd/MM/yyyy ''às'' HH:mm')}"></td>
+                        <td class="celula-dados">[[${d.tipo_ocorrencia}]]</td>
+                        <td class="celula-dados">[[${d.bairro}]]</td>
+                        <td class="celula-dados">[[${d.nivel_risco}]]</td>
+                        <td class="celula-dados">[[${d.situacao}]]</td>
+                        <td class="celula-dados"><a th:href="@{/denuncia/editar/{id}(id=${d.id})}" class="botao-detalhes">Detalhes</a></td>
                     </tr>
                 </table>
                 <div class="caixa-carrosel">

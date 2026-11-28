@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,9 +25,9 @@
             <form th:action="@{/formtel}" th:method="post">
                 <label for="input-telefone" id="label-telefone">Número de Telefone</label>
                 <br>
-                <input type="tel" placeholder="(15) 12345-6789" id="input-telefone" th:name="num_telefone">
+                <input type="tel" placeholder="(15) 12345-6789" id="input-telefone" th:name="num_telefone" required>
                 <div id="termos">
-                    <input type="checkbox" id="aceitar-termos">
+                    <input type="checkbox" id="aceitar-termos" required>
                     <label for="" id="termos-condicoes">Aceito os <a th:href="@{termos}" target="_blank" id="link-termos">Termos e Condições</a> para o envio de alertas.</label>
                 </div>
                 <button type="submit" id="botao-form-telefone">cadastrar</button>

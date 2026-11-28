@@ -1,6 +1,6 @@
 /* MAIN DA PAGINA */
 .caixa-principal-gesta-denuncias{
-    border: solid 1px red;
+    /* border: solid 1px red; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -88,7 +88,6 @@
     padding: 10px;
     border-radius: 10px;
     margin-bottom: 20px;
-    
 }
 /* caixa filtro data */
 .caixa-data{
@@ -228,4 +227,22 @@ select{
     cursor: pointer;
     color: #EFF6FF;
     background-color: #3B82F6;
+}
+
+.botao-pesquisa{
+    width: 120px;   
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-weight: bold;
+    background-color: #0b2d4d; 
+    border-radius: 5px;
+}.botao-pesquisa:hover{
+    background-color: #ff8800;
+    border-radius: 5px;
+    color: #0b2d4d;
+    cursor: pointer;
+    transform: scale(1.01);
 }
